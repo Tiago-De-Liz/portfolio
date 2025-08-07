@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tiago-liz.vercel.app/sitemap.xml

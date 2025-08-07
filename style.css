@@ -1,7 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
+
+.tech-card {
+    transition: all 0.3s ease;
+    border: 1px solid #374151;
+}
+
+.tech-card:hover {
+    border-color: #6B7280;
+    transform: translateY(-6px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #DC2626, #B91C1C);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #B91C1C, #991B1B);
+    transform: translateY(-1px);
+}
+
+.section-card {
+    background: rgba(42, 42, 42, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(75, 85, 99, 0.3);
 }

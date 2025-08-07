@@ -21,338 +21,610 @@
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="canonical" href="https://tiago-liz.vercel.app" />
-    
+       
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/simple-icons@5.0.0/dist/simple-icons.css" rel="stylesheet">
-    <title>Tiago De Liz - Desenvolvedor</title>
+    <title>Tiago De Liz - Desenvolvedor Full-Stack</title>
 </head>
-<body class="bg-[#141414] text-white">
-    <header class="bg-[#1a1a1a] fixed w-full top-0 left-0 z-50 py-4">
-        <div class="container mx-auto flex justify-between items-center relative">
-            <a href="#sobre" class="text-white text-xl font-semibold hover:text-red-500">Tiago De Liz</a>
+<body class="bg-gray-900 text-white">
+    <header class="bg-gray-800/90 backdrop-blur-md fixed w-full top-0 left-0 z-50 py-4 border-b border-gray-700/50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#sobre" class="text-xl font-semibold text-white hover:text-red-400 transition-colors duration-300">
+                Tiago De Liz
+            </a>
 
-            <div id="hamburger-btn" class="block lg:hidden">
-                <button id="menu-toggle" class="text-white text-2xl">
-                    <i id="hamburger-icon" class="fas fa-bars"></i>
-                </button>
-            </div>
+            <button id="menu-toggle" class="lg:hidden text-white text-2xl">
+                <i id="hamburger-icon" class="fas fa-bars"></i>
+            </button>
 
-            <div id="close-btn" class="lg:hidden hidden z-50">
-                <button id="close-menu" class="text-white text-2xl">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-
-            <div class="hidden lg:flex space-x-8">
-                <a href="#sobre" class="text-white text-lg font-semibold hover:text-red-500">Sobre Mim</a>
-                <a href="#tecnologias" class="text-white text-lg font-semibold hover:text-red-500">Tecnologias</a>
-                <a href="#projetos" class="text-white text-lg font-semibold hover:text-red-500">Projetos</a>
-                <a href="#newgamesrelease" class="text-white text-lg font-semibold hover:text-red-500">New Games Release</a>
-                <a href="#contato" class="text-white text-lg font-semibold hover:text-red-500">Contato</a>
-            </div>
+            <nav class="hidden lg:flex space-x-8">
+                <a href="#sobre" class="text-white hover:text-red-400 transition-colors duration-300">Sobre Mim</a>
+                <a href="#tecnologias" class="text-white hover:text-red-400 transition-colors duration-300">Tecnologias</a>
+                <a href="#projetos" class="text-white hover:text-red-400 transition-colors duration-300">Projetos</a>
+                <a href="#contato" class="text-white hover:text-red-400 transition-colors duration-300">Contato</a>
+            </nav>
         </div>
 
-        <div id="menu" class="lg:hidden hidden bg-[#1a1a1a] absolute w-full top-0 left-0 z-40 py-4">
-            <div class="container mx-auto text-center">
-                <a href="#sobre" class="block text-white text-lg font-semibold hover:text-red-500 py-2" onclick="closeMenu()">Sobre Mim</a>
-                <a href="#tecnologias" class="block text-white text-lg font-semibold hover:text-red-500 py-2" onclick="closeMenu()">Tecnologias</a>
-                <a href="#projetos" class="block text-white text-lg font-semibold hover:text-red-500 py-2" onclick="closeMenu()">Projetos</a>
-                <a href="#newgamesrelease" class="block text-white text-lg font-semibold hover:text-red-500 py-2" onclick="closeMenu()">New Games Release</a>
-                <a href="#contato" class="block text-white text-lg font-semibold hover:text-red-500 py-2" onclick="closeMenu()">Contato</a>
+        <div id="mobile-menu" class="lg:hidden hidden bg-gray-800/95 backdrop-blur-md border-t border-gray-700/50">
+            <div class="container mx-auto px-4 py-4 space-y-4">
+                <a href="#sobre" class="block text-white hover:text-red-400 transition-colors duration-300">Sobre Mim</a>
+                <a href="#tecnologias" class="block text-white hover:text-red-400 transition-colors duration-300">Tecnologias</a>
+                <a href="#projetos" class="block text-white hover:text-red-400 transition-colors duration-300">Projetos</a>
+                <a href="#contato" class="block text-white hover:text-red-400 transition-colors duration-300">Contato</a>
             </div>
         </div>
     </header>
 
-    <section id="sobre" class="container mx-auto py-16 px-2 sm:px-8 text-center mt-6">
-        <h1 class="text-3xl sm:text-6xl font-bold text-red-500">Olá, sou o Tiago De Liz</h1>
-        <p class="mt-4 text-base sm:text-2xl">Desenvolvedor Full-Stack | Criando soluções inovadoras com Go, JavaScript, React e muito mais.</p>
-        
-        <div class="mt-8 text-lg sm:text-xl max-w-4xl mx-auto">
-            <p class="text-gray-400">Com mais de 3 anos de experiência na área de desenvolvimento, Trabalhei em uma variedade de projetos, desde o desenvolvimento de sites e aplicativos web até soluções empresariais complexas. Atualmente, busco constantemente desafios que me permitam melhorar minhas habilidades.</p>
+    <section id="sobre" class="min-h-screen flex items-center justify-center pt-20 px-4">
+        <div class="container mx-auto text-center">
+            <div class="fade-in">
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6">
+                    <span class="text-red-500">Olá, sou o</span><br>
+                    <span class="text-white">Tiago De Liz</span>
+                </h1>
+                
+                <p class="text-xl sm:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                    Desenvolvedor Full-Stack | Criando soluções inovadoras com 
+                    <span class="text-red-400">Go</span>, 
+                    <span class="text-yellow-400">JavaScript</span>, 
+                    <span class="text-blue-400">React</span> e muito mais.
+                </p>
+                
+                <div class="text-lg text-gray-400 mb-12 max-w-4xl mx-auto">
+                    <p>Com mais de 3 anos de experiência na área de desenvolvimento, trabalhei em uma variedade de projetos, desde o desenvolvimento de sites e aplicativos web até soluções empresariais complexas. Atualmente, busco constantemente desafios que me permitam melhorar minhas habilidades.</p>
+                </div>
+
+                <div class="flex justify-center mb-12">
+                    <img src="/profile.jpeg" alt="Foto de Tiago De Liz" class="w-44 h-44 sm:w-56 sm:h-56 rounded-full bg-gray-700 border-4 border-red-500">
+                </div>
+
+                <div class="space-y-6">
+                    <h2 class="text-3xl sm:text-5xl font-bold text-red-500">Sobre Mim</h2>
+                    <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+                        Sou um desenvolvedor apaixonado por criar soluções inovadoras com uma variedade de tecnologias. 
+                        Tenho experiência em diversas áreas, como desenvolvimento web, integração de sistemas, 
+                        e construção de soluções com alto desempenho e escalabilidade.
+                    </p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="flex justify-center my-12">
-            <img src="/profile.jpeg" alt="Foto de Tiago De Liz" class="w-44 h-44 object-cover rounded-full border-4 border-red-500">
+    <section class="py-20 px-4">
+        <div class="container mx-auto">
+            <div class="section-card rounded-2xl p-8 sm:p-12 fade-in">
+                <h3 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-red-500">
+                    Experiência Profissional
+                </h3>
+                
+                <div class="space-y-8">
+                    <div class="bg-gray-800/50 rounded-xl p-6 hover-lift">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500 mt-2 flex-shrink-0"></div>
+                            <div class="flex-1">
+                                <h4 class="text-xl sm:text-2xl font-bold text-red-500">New Games Release</h4>
+                                <p class="text-lg text-gray-300 font-semibold">Desenvolvedor Full-Stack</p>
+                                <p class="text-gray-400 mb-4">2025 - Atualidade</p>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li class="flex items-start space-x-2">
+                                        <span class="text-red-400 mt-1">•</span>
+                                        <span>Responsável pelo desenvolvimento e manutenção de uma plataforma de jogos online, com integração com a API IGDB.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <span class="text-red-400 mt-1">•</span>
+                                        <span>Criação e integração de um sistema de login seguro, integração de pagamentos via Stripe e Mercado Pago.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <span class="text-red-400 mt-1">•</span>
+                                        <span>Desenvolvimento do back-end em Go com banco de dados PostgreSQL e deploy automatizado via GitHub Actions.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <span class="text-red-400 mt-1">•</span>
+                                        <span>Implementação de soluções em Docker, com infraestrutura em VPS privada e configuração de Cloudflare para segurança.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800/50 rounded-xl p-6 hover-lift">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-3 h-3 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
+                            <div class="flex-1">
+                                <h4 class="text-xl sm:text-2xl font-bold text-blue-500">Viasoft Korp ERP</h4>
+                                <p class="text-lg text-gray-300 font-semibold">Desenvolvedor Júnior</p>
+                                <p class="text-gray-400 mb-4">2024 - 2025</p>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li class="flex items-start space-x-2">
+                                        <span class="text-blue-400 mt-1">•</span>
+                                        <span>Desenvolvimento de novas funcionalidades complexas no sistema ERP da empresa.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <span class="text-blue-400 mt-1">•</span>
+                                        <span>Responsável por integrar APIs externas e otimizar o desempenho do sistema utilizando Delphi, GO, C# e outras tecnologias.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <span class="text-blue-400 mt-1">•</span>
+                                        <span>Colaborei diretamente com equipes de back-end para garantir a eficiência e escalabilidade do sistema.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800/50 rounded-xl p-6 hover-lift">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-3 h-3 rounded-full bg-green-500 mt-2 flex-shrink-0"></div>
+                            <div class="flex-1">
+                                <h4 class="text-xl sm:text-2xl font-bold text-green-500">PH Sys</h4>
+                                <p class="text-lg text-gray-300 font-semibold">Desenvolvedor Júnior</p>
+                                <p class="text-gray-400 mb-4">2024</p>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li class="flex items-start space-x-2">
+                                        <span class="text-green-400 mt-1">•</span>
+                                        <span>Fui responsável pela implementação de novas funcionalidades e manutenção de sistemas internos.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <span class="text-green-400 mt-1">•</span>
+                                        <span>Trabalhei na integração de sistemas internos e externos para melhorar a automação de processos.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800/50 rounded-xl p-6 hover-lift">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-3 h-3 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
+                            <div class="flex-1">
+                                <h4 class="text-xl sm:text-2xl font-bold text-purple-500">PH Sys</h4>
+                                <p class="text-lg text-gray-300 font-semibold">Suporte ao Cliente</p>
+                                <p class="text-gray-400 mb-4">2021 - 2024</p>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li class="flex items-start space-x-2">
+                                        <span class="text-purple-400 mt-1">•</span>
+                                        <span>Atendimento ao cliente para suporte técnico em sistemas de software.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <span class="text-purple-400 mt-1">•</span>
+                                        <span>Identificação e correção de bugs reportados pelos clientes, visando melhorar a experiência do usuário.</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <span class="text-purple-400 mt-1">•</span>
+                                        <span>Implementação de melhorias nos processos internos para garantir a satisfação e a solução rápida de problemas.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <h2 class="font-bold text-2xl sm:text-5xl text-red-500">Sobre Mim</h2>
-        <p class="mt-4 text-base sm:text-2xl max-w-3xl mx-auto">Sou um desenvolvedor apaixonado por criar soluções inovadoras com uma variedade de tecnologias. Tenho experiência em diversas áreas, como desenvolvimento web, integração de sistemas, e construção de soluções com alto desempenho e escalabilidade.</p>
-
-        <div class="mt-8 bg-[#2a2a2a] text-left px-2 py-2 sm:px-9 sm:py-9 rounded-xl">
-            <h3 class="text-xl sm:text-3xl text-red-500 font-bold">Experiência Profissional</h3>
+    <section id="tecnologias" class="py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl sm:text-5xl font-bold text-center mb-16 text-red-500 fade-in">
+                Tecnologias que Conheço
+            </h2>
             
-            <div class="mt-6">
-                <h4 class="text-lg sm:text-2xl text-red-500 font-bold">New Games Release</h4>
-                <p class="text-base sm:text-xl"><strong>Desenvolvedor Full-Stack (2025 - Atualidade)</strong></p>
-                <ul class="list-inside list-disc mt-1 text-base sm:text-lg">
-                    <li>Responsável pelo desenvolvimento e manutenção de uma plataforma de jogos online, com integração com a API IGDB.</li>
-                    <li>Criação e integração de um sistema de login seguro, integração de pagamentos via Stripe e Mercado Pago.</li>
-                    <li>Desenvolvimento do back-end em Go com banco de dados PostgreSQL e deploy automatizado via GitHub Actions.</li>
-                    <li>Implementação de soluções em Docker, com infraestrutura em VPS privada e configuração de Cloudflare para segurança.</li>
-                </ul>
-            </div>
-
-            <div class="mt-6">
-                <h4 class="text-lg sm:text-2xl text-red-500 font-bold">Viasoft Korp ERP</h4>
-                <p class="text-base sm:text-xl"><strong>Desenvolvedor Júnior (2024 - 2025)</strong></p>
-                <ul class="list-inside list-disc mt-1 text-base sm:text-lg">
-                    <li>Desenvolvimento de novas funcionalidades complexas no sistema ERP da empresa.</li>
-                    <li>Responsável por integrar APIs externas e otimizar o desempenho do sistema utilizando **Delphi**, **GO**, **C#** e outras tecnologias.</li>
-                    <li>Colaborei diretamente com equipes de back-end para garantir a eficiência e escalabilidade do sistema.</li>
-                </ul>
-            </div>
-
-            <div class="mt-6">
-                <h4 class="text-lg sm:text-2xl text-red-500 font-bold">PH Sys - Desenvolvedor Júnior</h4>
-                <p class="text-base sm:text-lg"><strong>Desenvolvedor Júnior (2024)</strong></p>
-                <ul class="list-inside list-disc mt-1 text-base sm:text-lg">
-                    <li>Fui responsável pela implementação de novas funcionalidades e manutenção de sistemas internos.</li>
-                    <li>Trabalhei na integração de sistemas internos e externos para melhorar a automação de processos.</li>
-                </ul>
-            </div>
-
-            <div class="mt-6">
-                <h4 class="text-lg sm:text-2xl text-red-500 font-bold">PH Sys - Suporte ao Cliente</h4>
-                <p class="text-base sm:text-xl"><strong>Suporte ao Cliente (2021 - 2024)</strong></p>
-                <ul class="list-inside list-disc mt-1 text-base sm:text-lg">
-                    <li>Atendimento ao cliente para suporte técnico em sistemas de software.</li>
-                    <li>Identificação e correção de bugs reportados pelos clientes, visando melhorar a experiência do usuário.</li>
-                    <li>Implementação de melhorias nos processos internos para garantir a satisfação e a solução rápida de problemas.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="tecnologias" class="container mx-auto bg-[#2a2a2a] rounded-xl">
-        <h2 class="text-xl sm:text-3xl text-center text-red-500 pt-8 font-bold">Tecnologias que Conheço</h2>
-        <div class="grid md:grid-cols-12 sm:grid-cols-8 grid-cols-4 gap-4 sm:gap-8 mt-10 pb-16 px-2 sm:px-8">
-            <div class="flex flex-col items-center">
-                <img src="src/icons/HTML5.svg" alt="HTML5 Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">HTML5</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/JavaScript.svg" alt="JavaScript Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">JavaScript</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/CSS3.svg" alt="CSS3 Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">CSS3</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/Tailwind-CSS.svg" alt="TailwindCSS Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">TailwindCSS</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/React.svg" alt="React Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">React</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/Flutter.svg" alt="Flutter Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">Flutter</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/Go.svg" alt="Go Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">Go</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/Delphi.svg" alt="Delphi Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">Delphi</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/CSharp.svg" alt="C# Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">C#</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/Dart.svg" alt="Dart Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">Dart</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/Lua.svg" alt="Lua Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">Lua</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/PostgresSQL.svg" alt="PostgreSQL Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">PostgreSQL</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/Microsoft-SQL-Server.svg" alt="SQLServer Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">SQLServer</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/NGINX.svg" alt="NGINX Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">NGINX</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/Docker.svg" alt="Docker Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">Docker</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/BitBucket.svg" alt="BitBucket Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">BitBucket</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/GitHub.svg" alt="GitHub Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">GitHub</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/GitHub-Actions.svg" alt="GitHub-Actions Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">GitHub Actions</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="src/icons/Git.svg" alt="Git Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                <p class="mt-2 text-lg">Git</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projetos" class="container mx-auto py-16 px-2 sm:px-8">
-        <h2 class="text-xl sm:text-3xl font-bold text-center text-red-500">Meus Projetos</h2>
-        <div class="grid lg:grid-cols-2 md:grid-cols-1 gap-4 mt-8">
-            <div class="bg-[#2a2a2a] p-4 rounded-lg">
-                <h3 class="text-xl sm:text-4xl">CBL Automaq</h3>
-                <iframe src="https://cblautomaq.com" class="w-full h-[50rem] mt-4 rounded-lg" frameborder="0"></iframe>
-                <p class="mt-4 text-base sm:text-xl">Landing page para a empresa CBL Automaq com um design responsivo.</p>
-                <div class="mt-4">
-                    <h4 class="text-sm sm:text-lg font-semibold">Tecnologias utilizadas:</h4>
-                    <ul class="list-disc list-inside">
-                        <li><i class="fas fa-code"></i> HTML, JavaScript, TailwindCSS</li>
-                    </ul>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 fade-in">
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/HTML5.svg" alt="HTML5 Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">HTML5</p>
                 </div>
-            </div>
-
-            <div class="bg-[#2a2a2a] p-4 rounded-lg">
-                <h3 class="text-xl sm:text-4xl">Visual Gessos</h3>
-                <iframe src="https://visualgessos.com" class="w-full h-[50rem] mt-4 rounded-lg" frameborder="0"></iframe>
-                <p class="mt-4 text-base sm:text-xl">Landing page para a empresa Visual Gessos com um design responsivo</p>
-                <div class="mt-4">
-                    <h4 class="text-sm sm:text-lg font-semibold">Tecnologias utilizadas:</h4>
-                    <ul class="list-disc list-inside">
-                        <li><i class="fas fa-code"></i> HTML, JavaScript, TailwindCSS</li>
-                    </ul>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/JavaScript.svg" alt="JavaScript Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">JavaScript</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/CSS3.svg" alt="CSS3 Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">CSS3</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/Tailwind-CSS.svg" alt="TailwindCSS Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">TailwindCSS</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/React.svg" alt="React Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">React</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/Flutter.svg" alt="Flutter Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">Flutter</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/Go.svg" alt="Go Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">Go</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/Delphi.svg" alt="Delphi Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">Delphi</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/CSharp.svg" alt="C# Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">C#</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/Dart.svg" alt="Dart Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">Dart</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/Lua.svg" alt="Lua Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">Lua</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/PostgresSQL.svg" alt="PostgreSQL Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">PostgreSQL</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/Microsoft-SQL-Server.svg" alt="SQLServer Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">SQL Server</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/NGINX.svg" alt="NGINX Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">NGINX</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/Docker.svg" alt="Docker Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">Docker</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/BitBucket.svg" alt="BitBucket Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">BitBucket</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/GitHub.svg" alt="GitHub Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">GitHub</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/GitHub-Actions.svg" alt="GitHub-Actions Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">GitHub Actions</p>
+                </div>
+                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
+                    <img src="src/icons/Git.svg" alt="Git Logo" class="w-8 h-8 sm:w-16 sm:h-16">
+                    <p class="text-sm font-medium">Git</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="newgamesrelease" class="container mx-auto py-6 px-2 sm:px-6 bg-[#2a2a2a] rounded-xl">
-        <h2 class="text-3xl sm:text-6xl text-center text-red-500 font-bold">New Games Release</h2>
-        <p class="mt-4 text-lg sm:text-2xl">Plataforma inovadora de jogos com integração com a API IGDB, sistema de login seguro, pagamentos via Stripe e Mercado Pago, e backend desenvolvido em Go com PostgreSQL. Toda a infraestrutura está rodando em Docker em uma VPS privada. Implementação do pipeline de deploy automático usando GitHub Actions. Além disso, o sistema conta com proteção via Cloudflare e integração com a API do Aliexpress para promoções automáticas.</p>
-        <div class="mt-4">
-            <h4 class="text-sm sm:text-xl font-semibold">Tecnologias utilizadas:</h4>
-            <ul class="list-disc list-inside">
-                <li><i class="fas fa-code"></i> Front-end: React, TailwindCSS</li>
-                <li><i class="fas fa-code"></i> Back-end: Go, PostgreSQL</li>
-                <li><i class="fas fa-cogs"></i> NGINX, Docker, Cloudflare</li>
-                <li><i class="fas fa-credit-card"></i> Stripe (pagamentos), Mercado Pago (pagamentos), Aliexpress API, IGDB</li>
-            </ul>
-        </div>
-        <iframe src="https://newgamesrelease.com" class="w-full h-[50rem] mt-4 rounded-lg" frameborder="0"></iframe>
-    
-        <h2 class="text-2xl sm:text-6xl text-center text-red-500 mt-12 font-bold">Chatbot Discord</h2>
-        <div class="swiper mySwiper mt-8">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="https://image.newgamesrelease.com/cardgame/coletar.gif" alt="Chatbot Image 1" class="object-contain w-full h-96 rounded-xl">
+    <section id="projetos" class="py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl sm:text-5xl font-bold text-center mb-16 text-red-500 fade-in">
+                Meus Projetos
+            </h2>
+            
+            <div class="grid lg:grid-cols-2 gap-3 mb-16">
+                <div class="section-card rounded-2xl p-4 hover-lift fade-in">
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-white text-center">CBL Automaq</h3>
+                    <div class="bg-gray-800 rounded-xl p-2 mb-2 h-[40rem] flex items-center justify-center">
+                        <iframe 
+                            src="https://cblautomaq.com" 
+                            class="w-full h-full rounded-lg border-0"
+                            title="CBL Automaq"
+                        ></iframe>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-6">
+                        Landing page para a empresa CBL Automaq com um design responsivo.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-semibold text-white">Tecnologias utilizadas:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">HTML</span>
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">TailwindCSS</span>
+                        </div>
+                        
+                        <a
+                            href="https://cblautomaq.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center space-x-2 btn-primary text-white px-6 py-3 rounded-lg font-semibold"
+                        >
+                            <span>Ver Projeto</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="swiper-slide">
-                    <img src="https://image.newgamesrelease.com/cardgame/tarefas.jpg" alt="Chatbot Image 6" class="object-contain w-full h-96 rounded-xl">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://image.newgamesrelease.com/cardgame/missoes.jpg" alt="Chatbot Image 7" class="object-contain w-full h-96 rounded-xl">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://image.newgamesrelease.com/cardgame/mercado.gif" alt="Chatbot Image 8" class="object-contain w-full h-96 rounded-xl">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://image.newgamesrelease.com/cardgame/LeagueOfLegends/collection-league-of-legends.webp" alt="Chatbot Image 5" class="object-contain w-full h-96 rounded-xl">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://image.newgamesrelease.com/cardgame/GrandTheftAutoV/collection-grand-theft-auto-v.webp" alt="Chatbot Image 3" class="object-contain w-full h-96 rounded-xl">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://image.newgamesrelease.com/cardgame/Minecraft/collection-minecraft.webp" alt="Chatbot Image 4" class="object-contain w-full h-96 rounded-xl">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://image.newgamesrelease.com/cardgame/LeagueOfLegends/collection-league-of-legends.webp" alt="Chatbot Image 5" class="object-contain w-full h-96 rounded-xl">
+
+                <div class="section-card rounded-2xl p-4 hover-lift fade-in">
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-center text-white">Visual Gessos</h3>
+                    <div class="bg-gray-800 rounded-xl p-2 mb-2 h-[40rem] flex items-center justify-center">
+                        <iframe 
+                            src="https://visualgessos.com" 
+                            class="w-full h-full rounded-lg border-0"
+                            title="Visual Gessos"
+                        ></iframe>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-6">
+                        Landing page para a empresa Visual Gessos com um design responsivo.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-semibold text-white">Tecnologias utilizadas:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">HTML</span>
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">TailwindCSS</span>
+                        </div>
+                        
+                        <a
+                            href="https://visualgessos.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center space-x-2 btn-primary text-white px-6 py-3 rounded-lg font-semibold"
+                        >
+                            <span>Ver Projeto</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="swiper-button-next after:text-red-500"></div>
-            <div class="swiper-button-prev after:text-red-500"></div>
+
+            <div class="section-card rounded-2xl p-2 sm:p-8 fade-in">
+                <h3 class="text-3xl sm:text-5xl font-bold text-center mb-8 text-red-500">
+                    New Games Release
+                </h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-300">
+                            Plataforma inovadora de jogos com integração com a API IGDB, sistema de login seguro, 
+                            pagamentos via Stripe e Mercado Pago, e backend desenvolvido em Go com PostgreSQL. 
+                            Toda a infraestrutura está rodando em Docker em uma VPS privada. Implementação do 
+                            pipeline de deploy automático usando GitHub Actions. Além disso, o sistema conta com 
+                            proteção via Cloudflare e integração com a API do Aliexpress para promoções automáticas.
+                        </p>
+                        
+                        <div class="bg-gray-800 rounded-xl p-2 flex items-center justify-center">
+                            <iframe 
+                                src="https://newgamesrelease.com" 
+                                class="w-full h-[40rem] rounded-lg border-0"
+                                title="New Games Release"
+                            ></iframe>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-semibold text-white">Tecnologias utilizadas:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">React</span>
+                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Go</span>
+                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Docker</span>
+                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Stripe</span>
+                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">NGINX</span>
+                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Cloudflare</span>
+                            </div>
+                            
+                            <a
+                                href="https://newgamesrelease.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center space-x-2 btn-primary text-white px-6 py-3 rounded-lg font-semibold"
+                            >
+                                <span>Ver Projeto</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <h4 class="text-2xl sm:text-3xl font-bold text-red-400">Chatbot Discord</h4>
+                        
+                        <p class="text-gray-300">
+                            Desenvolvi um chatbot para o Discord que funciona como um jogo interativo de cartas. 
+                            Ele permite que usuários coletem cartas, batalhem com amigos e participem de competições. 
+                            O bot também é integrado com a API do Discord e oferece uma experiência completa de "jogo" dentro de um chat.
+                        </p>
+                        
+                        <p class="text-gray-300">
+                            Além disso, o chatbot está disponível com tradução para <strong class="text-red-400">3 idiomas</strong>: 
+                            <strong class="text-blue-400">Português</strong> (nativo), 
+                            <strong class="text-green-400">Inglês</strong> e 
+                            <strong class="text-yellow-400">Espanhol</strong>.
+                        </p>
+                        
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="https://image.newgamesrelease.com/cardgame/coletar.gif" alt="Chatbot - Coletar cartas" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://image.newgamesrelease.com/cardgame/tarefas.jpg" alt="Chatbot - Tarefas" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://image.newgamesrelease.com/cardgame/missoes.jpg" alt="Chatbot - Missões" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://image.newgamesrelease.com/cardgame/mercado.gif" alt="Chatbot - Mercado" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://image.newgamesrelease.com/cardgame/LeagueOfLegends/collection-league-of-legends.webp" alt="Chatbot - League of Legends" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://image.newgamesrelease.com/cardgame/GrandTheftAutoV/collection-grand-theft-auto-v.webp" alt="Chatbot - GTA V" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://image.newgamesrelease.com/cardgame/Minecraft/collection-minecraft.webp" alt="Chatbot - Minecraft" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next text-red-500"></div>
+                            <div class="swiper-button-prev text-red-500"></div>
+                        </div>
+                        
+                        <div class="bg-gray-800/50 rounded-xl p-6 text-center">
+                            <p class="text-gray-300">
+                                Aproximadamente <span class="font-bold text-red-400">1500 usuários cadastrados</span> e 
+                                <span class="font-bold text-blue-400">100 usuários diários</span> jogando e interagindo com o bot.
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h5 class="text-lg font-semibold text-white">Tecnologias utilizadas:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Go</span>
+                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Discord API</span>
+                            </div>
+                            
+                            <a
+                                href="https://newgamesrelease.com/Tutorial/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center space-x-2 btn-primary text-white px-6 py-3 rounded-lg font-semibold"
+                            >
+                                <span>Acessar Tutorial</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p class="mt-4 text-sm sm:text-xl text-center max-w-3xl mx-auto">Desenvolvi um chatbot para o Discord que funciona como um jogo interativo de cartas. Ele permite que usuários coletem cartas, batalhem com amigos e participem de competições. O bot também é integrado com a API do Discord e oferece uma experiência completa de "jogo" dentro de um chat.</p>
-        <p class="mt-4 text-sm sm:text-xl text-center max-w-3xl mx-auto">
-            Além disso, o chatbot está disponível com tradução para <strong>3 idiomas</strong>: <strong>Português</strong> (nativo), <strong>Inglês</strong> e <strong>Espanhol</strong>.
+    </section>
+
+    <section id="contato" class="py-20 px-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl sm:text-5xl font-bold mb-8 text-red-500 fade-in">
+                Fale Comigo
+            </h2>
+            
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto fade-in">
+                Entre em contato para novas oportunidades e projetos. Você pode me encontrar nas redes sociais abaixo:
+            </p>
+            
+            <div class="flex justify-center gap-6 text-3xl fade-in">
+                <a
+                    href="mailto:tiagopdeliz@gmail.com"
+                    class="p-4 bg-red-600 rounded-xl text-white hover:bg-red-700 transition-all duration-300 hover:scale-110"
+                    title="Email"
+                >
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a
+                    href="https://github.com/Tiago-De-Liz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-4 bg-gray-700 rounded-xl text-white hover:bg-gray-600 transition-all duration-300 hover:scale-110"
+                    title="GitHub"
+                >
+                    <i class="fab fa-github"></i>
+                </a>
+                <a
+                    href="https://www.instagram.com/tiago_deliz/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-4 bg-pink-600 rounded-xl text-white hover:bg-pink-700 transition-all duration-300 hover:scale-110"
+                    title="Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                    href="https://wa.me/47988537408"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-4 bg-green-600 rounded-xl text-white hover:bg-green-700 transition-all duration-300 hover:scale-110"
+                    title="WhatsApp"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a
+                    href="https://discord.gg/mPJnmUJJRD"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-4 bg-indigo-600 rounded-xl text-white hover:bg-indigo-700 transition-all duration-300 hover:scale-110"
+                    title="Discord"
+                >
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-8 border-t border-gray-700/50">
+        <p class="text-gray-400">
+            © 2025 Tiago De Liz - Todos os direitos reservados.
         </p>
-        <p class="mt-4 text-sm sm:text-xl text-center text-gray-400">Aproximadamente <span class="font-bold">1500 usuários cadastrados</span> e <span class="font-bold">100 usuários diários</span> jogando e interagindo com o bot.</p>
-        <div class="mt-2 text-center items-center">
-            <a href="https://newgamesrelease.com/Tutorial/" class="mx-auto mt-6 inline-block bg-red-500 text-white py-3 px-8 rounded-lg text-xl font-semibold hover:bg-red-600 transition-colors duration-300 text-center mb-4">Acessar Tutorial</a>
-            <h4 class="text-lg sm:text-2xl font-semibold">Tecnologias utilizadas:</h4>
-            <ul class="list-disc list-inside">
-                <li><i class="fas fa-code"></i> Go, PostgreSQL</li>
-            </ul>
-        </div>
-    </section>
-
-
-    <section id="contato" class="container mx-auto py-16 px-8">
-        <h2 class="text-lg sm:text-3xl text-center font-bold text-red-500">Fale Comigo</h2>
-        <p class="mt-4 text-base sm:text-xl text-center">Entre em contato para novas oportunidades e projetos. Você pode me encontrar nas redes sociais abaixo:</p>
-        <div class="flex justify-center gap-6 mt-6 text-lg sm:text-4xl">
-            <a href="mailto:tiagopdeliz@gmail.com.com" class="text-white hover:text-red-500"><i class="fas fa-envelope w-8 h-8"></i></a>
-            <a href="https://github.com/Tiago-De-Liz" class="text-white hover:text-red-500"><i class="fab fa-github w-8 h-8"></i></a>
-            <a href="https://www.instagram.com/tiago_deliz/" class="text-white hover:text-red-500"><i class="fab fa-instagram w-8 h-8"></i></a>
-            <a href="https://wa.me/47988537408" class="text-white hover:text-red-500"><i class="fab fa-whatsapp w-8 h-8"></i></a>
-            <a href="https://discord.gg/mPJnmUJJRD" class="text-white hover:text-red-500"><i class="fab fa-discord w-8 h-8"></i></a>
-        </div>
-    </section>
-
-    <footer class="text-center py-8">
-        <p class="text-base sm:text-xl">© 2025 Tiago De Liz - Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        const menuToggle = document.getElementById("menu-toggle");
-        const closeBtn = document.getElementById("close-btn");
-        const hamburgerBtn = document.getElementById("hamburger-btn");
-        const menu = document.getElementById("menu");
-        const hamburgerIcon = document.getElementById("hamburger-icon");
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
 
-        menuToggle.addEventListener("click", function() {
-            menu.classList.toggle("hidden");  
-            hamburgerBtn.classList.add("hidden");  
-            closeBtn.classList.remove("hidden"); 
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            
+            if (mobileMenu.classList.contains('hidden')) {
+                hamburgerIcon.className = 'fas fa-bars';
+            } else {
+                hamburgerIcon.className = 'fas fa-times';
+            }
         });
 
-        closeBtn.addEventListener("click", function() {
-            menu.classList.add("hidden"); 
-            closeBtn.classList.add("hidden");  
-            hamburgerBtn.classList.remove("hidden");  
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                hamburgerIcon.className = 'fas fa-bars';
+            });
         });
 
-        function closeMenu() {
-            menu.classList.add("hidden"); 
-            closeBtn.classList.add("hidden");  
-            hamburgerBtn.classList.remove("hidden"); 
-        }
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
 
         const swiper = new Swiper('.swiper', {
             loop: true,
             autoplay: {
-                delay: 10000,
+                delay: 5000,
+                disableOnInteraction: false,
             },
             slidesPerView: 1,
             spaceBetween: 10,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>
 </html>
+
