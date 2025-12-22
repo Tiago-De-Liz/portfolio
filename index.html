@@ -1,630 +1,629 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="description" content="Portfolio de Tiago De Liz, desenvolvedor Full-Stack especializado em Go, JavaScript, React e muito mais. Veja meus projetos e habilidades.">
-    <meta name="keywords" content="tiago de liz, portfolio, desenvolvedor full-stack, Go, JavaScript, React, CSS, Tailwind, SQL, PostgreSQL, Delphi, C#, CSharp, Desenvolvimento de Sites, Desenvolvedor de sistemas">
-    <meta name="author" content="Tiago De Liz">
+    <meta name="description" content="Portfolio High-Tech de Tiago De Liz - Full Stack Developer">
+    <title>Tiago De Liz | System Architect</title>
 
-    <meta property="og:title" content="Tiago De Liz - Desenvolvedor Full-Stack">
-    <meta property="og:description" content="Veja o portfólio de Tiago De Liz, desenvolvedor Full-Stack. Projetos em Go, React, e muito mais.">
-    <meta property="og:image" content="https://tiago-liz.vercel.app/shared.png"> 
-    <meta property="og:url" content="https://tiago-liz.vercel.app">
-    <meta property="og:type" content="website">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configurações Visuais (Neon & Fontes) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            bg: '#030305',
+                            glass: 'rgba(20, 20, 25, 0.7)',
+                            primary: '#00f3ff',   /* Ciano Neon */
+                            secondary: '#ff0055', /* Pink Neon */
+                            purple: '#bc13fe',    /* Roxo Neon */
+                            dark: '#0a0a0a'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['Fira Code', 'monospace'],
+                        display: ['Orbitron', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'neon-blue': '0 0 10px rgba(0, 243, 255, 0.5), 0 0 20px rgba(0, 243, 255, 0.3)',
+                        'neon-pink': '0 0 10px rgba(255, 0, 85, 0.5), 0 0 20px rgba(255, 0, 85, 0.3)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tiago De Liz - Desenvolvedor Full-Stack">
-    <meta name="twitter:description" content="Veja o portfólio de Tiago De Liz, desenvolvedor Full-Stack. Projetos em Go, React, e muito mais.">
-    <meta name="twitter:image" content="https://tiago-liz.vercel.app/shared.png">
+    <!-- Fontes & Ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Fira+Code:wght@400;600&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="https://tiago-liz.vercel.app" />
-       
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <title>Tiago De Liz - Desenvolvedor Full-Stack</title>
+    <style>
+        /* Estilos Globais */
+        body { background-color: #030305; color: #e0e0e0; overflow-x: hidden; }
+        
+        /* Scrollbar Neon */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #030305; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00f3ff; }
+
+        /* Fundo 3D */
+        #canvas-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            opacity: 0.6; pointer-events: none;
+        }
+
+        /* Efeito Glassmorphism (Vidro) */
+        .glass-card {
+            background: rgba(18, 18, 23, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 243, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.15);
+            background: rgba(18, 18, 23, 0.8);
+        }
+
+        /* Mockup de Janela (Browser Fake) */
+        .browser-mockup {
+            border-radius: 12px;
+            overflow: hidden;
+            background: #1a1b26;
+            border: 1px solid rgba(255,255,255,0.1);
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+        }
+        .browser-header {
+            background: #0f0f13;
+            padding: 10px 15px;
+            display: flex; gap: 8px; align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        
+        /* Marquee Infinito */
+        .marquee-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(90deg, #030305 0%, transparent 10%, transparent 90%, #030305 100%);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            animation: scroll 25s linear infinite;
+        }
+        .marquee-item {
+            padding: 0 3rem;
+            display: flex; align-items: center; gap: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+        .marquee-item:hover { opacity: 1; text-shadow: 0 0 15px currentColor; }
+        
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        /* Timeline da XP */
+        .timeline-line {
+            position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+            background: linear-gradient(to bottom, #00f3ff, #bc13fe, transparent);
+            left: 50%; transform: translateX(-50%);
+        }
+        @media (max-width: 768px) { .timeline-line { left: 20px; } }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(135deg, #00f3ff 0%, #bc13fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-white">
-    <header class="bg-gray-800/90 backdrop-blur-md fixed w-full top-0 left-0 z-50 py-4 border-b border-gray-700/50">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="#sobre" class="text-xl font-semibold text-white hover:text-red-400 transition-colors duration-300">
-                Tiago De Liz
+<body class="antialiased selection:bg-cyber-primary selection:text-black">
+
+    <!-- Fundo 3D -->
+    <div id="canvas-container"></div>
+
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 bg-cyber-bg/80 backdrop-blur-md border-b border-white/5 py-4 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold tracking-widest text-white hover:text-cyber-primary transition">
+                TIAGO<span class="text-cyber-primary">.DEV</span>
             </a>
+            
+            <div class="hidden md:flex space-x-8 font-mono text-sm tracking-wide text-gray-400">
+                <a href="#about" class="hover:text-cyber-primary hover:shadow-neon-blue transition duration-300">_SOBRE</a>
+                <a href="#projects" class="hover:text-cyber-primary hover:shadow-neon-blue transition duration-300">_PROJETOS</a>
+                <a href="#stack" class="hover:text-cyber-primary hover:shadow-neon-blue transition duration-300">_STACK</a>
+                <a href="#contact" class="hover:text-cyber-primary hover:shadow-neon-blue transition duration-300">_CONTATO</a>
+            </div>
 
-            <button id="menu-toggle" class="lg:hidden text-white text-2xl">
-                <i id="hamburger-icon" class="fas fa-bars"></i>
+            <button class="md:hidden text-white text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars"></i>
             </button>
-
-            <nav class="hidden lg:flex space-x-8">
-                <a href="#sobre" class="text-white hover:text-red-400 transition-colors duration-300">Sobre Mim</a>
-                <a href="#tecnologias" class="text-white hover:text-red-400 transition-colors duration-300">Tecnologias</a>
-                <a href="#projetos" class="text-white hover:text-red-400 transition-colors duration-300">Projetos</a>
-                <a href="#contato" class="text-white hover:text-red-400 transition-colors duration-300">Contato</a>
-            </nav>
         </div>
-
-        <div id="mobile-menu" class="lg:hidden hidden bg-gray-800/95 backdrop-blur-md border-t border-gray-700/50">
-            <div class="container mx-auto px-4 py-4 space-y-4">
-                <a href="#sobre" class="block text-white hover:text-red-400 transition-colors duration-300">Sobre Mim</a>
-                <a href="#tecnologias" class="block text-white hover:text-red-400 transition-colors duration-300">Tecnologias</a>
-                <a href="#projetos" class="block text-white hover:text-red-400 transition-colors duration-300">Projetos</a>
-                <a href="#contato" class="block text-white hover:text-red-400 transition-colors duration-300">Contato</a>
+        
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-cyber-bg border-b border-gray-800 p-4">
+            <div class="flex flex-col space-y-4 font-mono text-center">
+                <a href="#about" class="text-gray-300 hover:text-cyber-primary">_SOBRE</a>
+                <a href="#projects" class="text-gray-300 hover:text-cyber-primary">_PROJETOS</a>
+                <a href="#stack" class="text-gray-300 hover:text-cyber-primary">_STACK</a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <section id="sobre" class="min-h-screen flex items-center justify-center pt-20 px-4">
-        <div class="container mx-auto text-center">
-            <div class="fade-in">
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6">
-                    <span class="text-red-500">Olá, sou o</span><br>
-                    <span class="text-white">Tiago De Liz</span>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20 px-6 relative overflow-hidden">
+        <!-- Elementos Flutuantes de Fundo -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-cyber-primary/10 rounded-full blur-[80px] animate-pulse-slow"></div>
+        <div class="absolute bottom-20 right-10 w-40 h-40 bg-cyber-secondary/10 rounded-full blur-[80px] animate-pulse-slow"></div>
+
+        <div class="container mx-auto grid lg:grid-cols-2 gap-12 items-center z-10">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-cyber-primary/30 rounded bg-cyber-primary/5 text-cyber-primary font-mono text-xs tracking-widest">
+                    <span class="w-2 h-2 rounded-full bg-cyber-primary animate-pulse"></span>
+                    SYSTEM ONLINE
+                </div>
+                <h1 class="text-5xl sm:text-7xl font-display font-bold leading-tight mb-6 text-white">
+                    BUILDING <br>
+                    <span class="text-gradient drop-shadow-[0_0_15px_rgba(188,19,254,0.4)]">THE FUTURE</span>
                 </h1>
-                
-                <p class="text-xl sm:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                    Desenvolvedor Full-Stack | Criando soluções inovadoras com 
-                    <span class="text-red-400">Go</span>, 
-                    <span class="text-yellow-400">JavaScript</span>, 
-                    <span class="text-blue-400">React</span> e muito mais.
+                <p class="text-xl text-gray-400 mb-8 max-w-lg leading-relaxed border-l-2 border-cyber-purple pl-6">
+                    Desenvolvedor Full-Stack High-End. <br>
+                    Especialista em arquiteturas <strong class="text-white">Go</strong>, <strong class="text-white">React</strong> e microsserviços escaláveis.
                 </p>
-                
-                <div class="text-lg text-gray-400 mb-12 max-w-4xl mx-auto">
-                    <p>Com mais de 3 anos de experiência na área de desenvolvimento, trabalhei em uma variedade de projetos, desde o desenvolvimento de sites e aplicativos web até soluções empresariais complexas. Atualmente, busco constantemente desafios que me permitam melhorar minhas habilidades.</p>
-                </div>
-
-                <div class="flex justify-center mb-12">
-                    <img src="/profile.jpeg" alt="Foto de Tiago De Liz" class="w-44 h-44 sm:w-56 sm:h-56 rounded-full bg-gray-700 border-4 border-red-500">
-                </div>
-
-                <div class="space-y-6">
-                    <h2 class="text-3xl sm:text-5xl font-bold text-red-500">Sobre Mim</h2>
-                    <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-                        Sou um desenvolvedor apaixonado por criar soluções inovadoras com uma variedade de tecnologias. 
-                        Tenho experiência em diversas áreas, como desenvolvimento web, integração de sistemas, 
-                        e construção de soluções com alto desempenho e escalabilidade.
-                    </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="group relative px-8 py-4 bg-transparent overflow-hidden rounded border border-cyber-primary text-white font-bold font-display tracking-wide hover:shadow-neon-blue transition-all">
+                        <div class="absolute top-0 left-0 w-full h-full bg-cyber-primary/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                        <span class="relative flex items-center gap-2">VER PROJETOS <i class="fas fa-code"></i></span>
+                    </a>
+                    <a href="https://github.com/Tiago-De-Liz" target="_blank" class="px-8 py-4 rounded border border-white/10 hover:bg-white/5 text-gray-300 hover:text-white transition flex items-center gap-2 font-mono">
+                        <i class="fab fa-github"></i> GITHUB
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="py-20 px-4">
-        <div class="container mx-auto">
-            <div class="section-card rounded-2xl p-8 sm:p-12 fade-in">
-                <h3 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-red-500">
-                    Experiência Profissional
-                </h3>
-                
-                <div class="space-y-8">
-                    <div class="bg-gray-800/50 rounded-xl p-6 hover-lift">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-3 h-3 rounded-full bg-red-500 mt-2 flex-shrink-0"></div>
-                            <div class="flex-1">
-                                <h4 class="text-xl sm:text-2xl font-bold text-red-500">New Games Release</h4>
-                                <p class="text-lg text-gray-300 font-semibold">Desenvolvedor Full-Stack</p>
-                                <p class="text-gray-400 mb-4">2025 - Atualidade</p>
-                                <ul class="space-y-2 text-gray-300">
-                                    <li class="flex items-start space-x-2">
-                                        <span class="text-red-400 mt-1">•</span>
-                                        <span>Responsável pelo desenvolvimento e manutenção de uma plataforma de jogos online, com integração com a API IGDB.</span>
-                                    </li>
-                                    <li class="flex items-start space-x-2">
-                                        <span class="text-red-400 mt-1">•</span>
-                                        <span>Criação e integração de um sistema de login seguro, integração de pagamentos via Stripe e Mercado Pago.</span>
-                                    </li>
-                                    <li class="flex items-start space-x-2">
-                                        <span class="text-red-400 mt-1">•</span>
-                                        <span>Desenvolvimento do back-end em Go com banco de dados PostgreSQL e deploy automatizado via GitHub Actions.</span>
-                                    </li>
-                                    <li class="flex items-start space-x-2">
-                                        <span class="text-red-400 mt-1">•</span>
-                                        <span>Implementação de soluções em Docker, com infraestrutura em VPS privada e configuração de Cloudflare para segurança.</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-gray-800/50 rounded-xl p-6 hover-lift">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-3 h-3 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                            <div class="flex-1">
-                                <h4 class="text-xl sm:text-2xl font-bold text-blue-500">Viasoft Korp ERP</h4>
-                                <p class="text-lg text-gray-300 font-semibold">Desenvolvedor Júnior</p>
-                                <p class="text-gray-400 mb-4">2024 - 2025</p>
-                                <ul class="space-y-2 text-gray-300">
-                                    <li class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">•</span>
-                                        <span>Desenvolvimento de novas funcionalidades complexas no sistema ERP da empresa.</span>
-                                    </li>
-                                    <li class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">•</span>
-                                        <span>Responsável por integrar APIs externas e otimizar o desempenho do sistema utilizando Delphi, GO, C# e outras tecnologias.</span>
-                                    </li>
-                                    <li class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">•</span>
-                                        <span>Colaborei diretamente com equipes de back-end para garantir a eficiência e escalabilidade do sistema.</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-gray-800/50 rounded-xl p-6 hover-lift">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-3 h-3 rounded-full bg-green-500 mt-2 flex-shrink-0"></div>
-                            <div class="flex-1">
-                                <h4 class="text-xl sm:text-2xl font-bold text-green-500">PH Sys</h4>
-                                <p class="text-lg text-gray-300 font-semibold">Desenvolvedor Júnior</p>
-                                <p class="text-gray-400 mb-4">2024</p>
-                                <ul class="space-y-2 text-gray-300">
-                                    <li class="flex items-start space-x-2">
-                                        <span class="text-green-400 mt-1">•</span>
-                                        <span>Fui responsável pela implementação de novas funcionalidades e manutenção de sistemas internos.</span>
-                                    </li>
-                                    <li class="flex items-start space-x-2">
-                                        <span class="text-green-400 mt-1">•</span>
-                                        <span>Trabalhei na integração de sistemas internos e externos para melhorar a automação de processos.</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-gray-800/50 rounded-xl p-6 hover-lift">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-3 h-3 rounded-full bg-purple-500 mt-2 flex-shrink-0"></div>
-                            <div class="flex-1">
-                                <h4 class="text-xl sm:text-2xl font-bold text-purple-500">PH Sys</h4>
-                                <p class="text-lg text-gray-300 font-semibold">Suporte ao Cliente</p>
-                                <p class="text-gray-400 mb-4">2021 - 2024</p>
-                                <ul class="space-y-2 text-gray-300">
-                                    <li class="flex items-start space-x-2">
-                                        <span class="text-purple-400 mt-1">•</span>
-                                        <span>Atendimento ao cliente para suporte técnico em sistemas de software.</span>
-                                    </li>
-                                    <li class="flex items-start space-x-2">
-                                        <span class="text-purple-400 mt-1">•</span>
-                                        <span>Identificação e correção de bugs reportados pelos clientes, visando melhorar a experiência do usuário.</span>
-                                    </li>
-                                    <li class="flex items-start space-x-2">
-                                        <span class="text-purple-400 mt-1">•</span>
-                                        <span>Implementação de melhorias nos processos internos para garantir a satisfação e a solução rápida de problemas.</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tecnologias" class="py-20 px-4">
-        <div class="container mx-auto">
-            <h2 class="text-3xl sm:text-5xl font-bold text-center mb-16 text-red-500 fade-in">
-                Tecnologias que Conheço
-            </h2>
-            
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 fade-in">
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/HTML5.svg" alt="HTML5 Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">HTML5</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/JavaScript.svg" alt="JavaScript Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">JavaScript</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/CSS3.svg" alt="CSS3 Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">CSS3</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/Tailwind-CSS.svg" alt="TailwindCSS Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">TailwindCSS</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/React.svg" alt="React Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">React</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/Flutter.svg" alt="Flutter Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">Flutter</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/Go.svg" alt="Go Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">Go</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/Delphi.svg" alt="Delphi Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">Delphi</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/CSharp.svg" alt="C# Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">C#</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/Dart.svg" alt="Dart Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">Dart</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/Lua.svg" alt="Lua Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">Lua</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/PostgresSQL.svg" alt="PostgreSQL Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">PostgreSQL</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/Microsoft-SQL-Server.svg" alt="SQLServer Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">SQL Server</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/NGINX.svg" alt="NGINX Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">NGINX</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/Docker.svg" alt="Docker Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">Docker</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/BitBucket.svg" alt="BitBucket Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">BitBucket</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/GitHub.svg" alt="GitHub Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">GitHub</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/GitHub-Actions.svg" alt="GitHub-Actions Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">GitHub Actions</p>
-                </div>
-                <div class="tech-card bg-gray-800 rounded-xl p-6 flex flex-col items-center">
-                    <img src="src/icons/Git.svg" alt="Git Logo" class="w-8 h-8 sm:w-16 sm:h-16">
-                    <p class="text-sm font-medium">Git</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projetos" class="py-20 px-4">
-        <div class="container mx-auto">
-            <h2 class="text-3xl sm:text-5xl font-bold text-center mb-16 text-red-500 fade-in">
-                Meus Projetos
-            </h2>
-            
-            <div class="grid lg:grid-cols-2 gap-3 mb-16">
-                <div class="section-card rounded-2xl p-4 hover-lift fade-in">
-                    <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-white text-center">CBL Automaq</h3>
-                    <div class="bg-gray-800 rounded-xl p-2 mb-2 h-[40rem] flex items-center justify-center">
-                        <iframe 
-                            src="https://cblautomaq.com" 
-                            class="w-full h-full rounded-lg border-0"
-                            title="CBL Automaq"
-                        ></iframe>
-                    </div>
+            <!-- Avatar 3D Tech -->
+            <div class="relative flex justify-center perspective-1000" data-aos="zoom-in" data-aos-delay="200">
+                <div class="relative w-72 h-72 sm:w-96 sm:h-96 group">
+                    <!-- Anéis Giratórios -->
+                    <div class="absolute inset-0 border border-cyber-primary/40 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                    <div class="absolute inset-4 border border-dashed border-cyber-purple/40 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
                     
-                    <p class="text-gray-300 mb-6">
-                        Landing page para a empresa CBL Automaq com um design responsivo.
-                    </p>
-                    
-                    <div class="space-y-4">
-                        <h4 class="text-lg font-semibold text-white">Tecnologias utilizadas:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">HTML</span>
-                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">JavaScript</span>
-                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">TailwindCSS</span>
+                    <!-- Imagem -->
+                    <div class="absolute inset-6 rounded-full overflow-hidden border-2 border-gray-700 shadow-[0_0_40px_rgba(0,243,255,0.2)] bg-black z-10">
+                        <img src="profile.jpeg" alt="Tiago De Liz" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
+                    </div>
+
+                    <!-- Badges Flutuantes -->
+                    <div class="absolute top-0 right-0 glass-card p-3 rounded-lg border-cyber-primary/30 animate-float z-20">
+                        <i class="fab fa-golang text-4xl text-cyan-400 drop-shadow-[0_0_5px_rgba(0,243,255,0.8)]"></i>
+                    </div>
+                    <div class="absolute bottom-10 left-0 glass-card p-3 rounded-lg border-cyber-purple/30 animate-float z-20" style="animation-delay: 1.5s">
+                        <i class="fab fa-react text-4xl text-blue-400 drop-shadow-[0_0_5px_rgba(59,130,246,0.8)]"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infinite Tech Marquee -->
+    <div class="py-12 border-y border-white/5 bg-black/40 backdrop-blur">
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <!-- Conteúdo Duplicado para Loop Perfeito -->
+                <div class="marquee-item text-cyan-400"><i class="fab fa-golang"></i> GOLANG</div>
+                <div class="marquee-item text-blue-400"><i class="fab fa-react"></i> REACT</div>
+                <div class="marquee-item text-blue-600"><i class="fab fa-docker"></i> DOCKER</div>
+                <div class="marquee-item text-yellow-400"><i class="fab fa-js"></i> JAVASCRIPT</div>
+                <div class="marquee-item text-blue-300"><i class="fas fa-database"></i> POSTGRESQL</div>
+                <div class="marquee-item text-red-500"><i class="fas fa-fire"></i> REDIS</div>
+                <div class="marquee-item text-green-400"><i class="fas fa-server"></i> NGINX</div>
+                <div class="marquee-item text-purple-500"><i class="fab fa-github"></i> ACTIONS</div>
+                <div class="marquee-item text-orange-500"><i class="fab fa-aws"></i> CLOUD</div>
+                
+                <!-- Repetição -->
+                <div class="marquee-item text-cyan-400"><i class="fab fa-golang"></i> GOLANG</div>
+                <div class="marquee-item text-blue-400"><i class="fab fa-react"></i> REACT</div>
+                <div class="marquee-item text-blue-600"><i class="fab fa-docker"></i> DOCKER</div>
+                <div class="marquee-item text-yellow-400"><i class="fab fa-js"></i> JAVASCRIPT</div>
+                <div class="marquee-item text-blue-300"><i class="fas fa-database"></i> POSTGRESQL</div>
+                <div class="marquee-item text-red-500"><i class="fas fa-fire"></i> REDIS</div>
+                <div class="marquee-item text-green-400"><i class="fas fa-server"></i> NGINX</div>
+                <div class="marquee-item text-purple-500"><i class="fab fa-github"></i> ACTIONS</div>
+                <div class="marquee-item text-orange-500"><i class="fab fa-aws"></i> CLOUD</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projetos High-End -->
+    <section id="projects" class="py-32 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl sm:text-5xl font-display font-bold mb-20 text-center text-white" data-aos="fade-down">
+                PROJETOS <span class="text-cyber-primary drop-shadow-[0_0_10px_rgba(0,243,255,0.5)]">HIGH-END</span>
+            </h2>
+
+            <div class="flex flex-col gap-24">
+                
+                <!-- Grup-ify -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center group">
+                    <!-- Janela Mockup (Substitui Iframe) -->
+                    <div class="browser-mockup shadow-neon-blue/20 transition-transform duration-500 group-hover:scale-[1.02] group-hover:shadow-neon-blue/40 vanilla-tilt" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                        <div class="browser-header">
+                            <div class="dot bg-red-500"></div><div class="dot bg-yellow-500"></div><div class="dot bg-green-500"></div>
+                            <span class="ml-3 text-xs text-gray-500 font-mono">grup-ify.com</span>
                         </div>
+                        <div class="relative h-[350px] bg-gray-900 overflow-hidden">
+                            <!-- IMPORTANTE: Coloque o print aqui -->
+                            <img src="print-grupify.png" onerror="this.src='https://placehold.co/800x600/111/00f3ff?text=Print+Grup-ify'" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                        </div>
+                    </div>
+
+                    <!-- Info -->
+                    <div data-aos="fade-left">
+                        <h3 class="text-3xl font-display font-bold text-white mb-2">Grup-ify</h3>
+                        <p class="text-cyber-primary font-mono text-sm tracking-widest mb-6">CRM & WHATSAPP AUTOMATION</p>
                         
-                        <a
-                            href="https://cblautomaq.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center space-x-2 btn-primary text-white px-6 py-3 rounded-lg font-semibold"
-                        >
-                            <span>Ver Projeto</span>
-                            <i class="fas fa-external-link-alt"></i>
+                        <p class="text-gray-400 mb-6 text-lg leading-relaxed">
+                            CRM robusto integrado ao WhatsApp. Desenvolvido para gerenciar leads em alta escala, controlar fluxos de mensagens e disparos em massa. Focado em performance extrema.
+                        </p>
+
+                        <div class="glass-card p-5 rounded-lg border-l-4 border-cyber-primary mb-8">
+                            <ul class="space-y-2 font-mono text-sm text-gray-300">
+                                <li class="flex items-center"><i class="fas fa-bolt text-cyber-primary w-6"></i> Backend em <span class="text-white ml-1">Go</span> para disparos rápidos</li>
+                                <li class="flex items-center"><i class="fas fa-database text-cyber-primary w-6"></i> <span class="text-white mx-1">Redis</span> + Postgres para escala</li>
+                                <li class="flex items-center"><i class="fab fa-docker text-cyber-primary w-6"></i> Infraestrutura conteinerizada</li>
+                            </ul>
+                        </div>
+
+                        <a href="https://grup-ify.com" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-cyber-primary/10 text-cyber-primary border border-cyber-primary rounded hover:bg-cyber-primary hover:text-black transition-all font-bold">
+                            VISITAR PROJETO <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="section-card rounded-2xl p-4 hover-lift fade-in">
-                    <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-center text-white">Visual Gessos</h3>
-                    <div class="bg-gray-800 rounded-xl p-2 mb-2 h-[40rem] flex items-center justify-center">
-                        <iframe 
-                            src="https://visualgessos.com" 
-                            class="w-full h-full rounded-lg border-0"
-                            title="Visual Gessos"
-                        ></iframe>
-                    </div>
-                    
-                    <p class="text-gray-300 mb-6">
-                        Landing page para a empresa Visual Gessos com um design responsivo.
-                    </p>
-                    
-                    <div class="space-y-4">
-                        <h4 class="text-lg font-semibold text-white">Tecnologias utilizadas:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">HTML</span>
-                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">JavaScript</span>
-                            <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">TailwindCSS</span>
-                        </div>
+                <!-- Promofasts -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center group">
+                    <!-- Info (Ordem invertida no desktop) -->
+                    <div class="order-2 lg:order-1" data-aos="fade-right">
+                        <h3 class="text-3xl font-display font-bold text-white mb-2">Promofasts</h3>
+                        <p class="text-cyber-secondary font-mono text-sm tracking-widest mb-6">REAL-TIME DEALS TRACKER</p>
                         
-                        <a
-                            href="https://visualgessos.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center space-x-2 btn-primary text-white px-6 py-3 rounded-lg font-semibold"
-                        >
-                            <span>Ver Projeto</span>
-                            <i class="fas fa-external-link-alt"></i>
+                        <p class="text-gray-400 mb-6 text-lg leading-relaxed">
+                            Plataforma de inteligência de preços. Monitora grandes e-commerces em tempo real e notifica usuários instantaneamente sobre promoções e erros de preço.
+                        </p>
+
+                        <div class="glass-card p-5 rounded-lg border-l-4 border-cyber-secondary mb-8">
+                            <ul class="space-y-2 font-mono text-sm text-gray-300">
+                                <li class="flex items-center"><i class="fas fa-robot text-cyber-secondary w-6"></i> Scrapers otimizados em <span class="text-white ml-1">Node.js</span></li>
+                                <li class="flex items-center"><i class="fas fa-bell text-cyber-secondary w-6"></i> Websockets para alertas reais</li>
+                                <li class="flex items-center"><i class="fas fa-layer-group text-cyber-secondary w-6"></i> Prisma ORM + PostgreSQL</li>
+                            </ul>
+                        </div>
+
+                        <a href="https://promofasts.com" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-cyber-secondary/10 text-cyber-secondary border border-cyber-secondary rounded hover:bg-cyber-secondary hover:text-black transition-all font-bold">
+                            VISITAR PROJETO <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+
+                    <!-- Janela Mockup -->
+                    <div class="order-1 lg:order-2 browser-mockup shadow-neon-pink/20 transition-transform duration-500 group-hover:scale-[1.02] group-hover:shadow-neon-pink/40 vanilla-tilt" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                        <div class="browser-header">
+                            <div class="dot bg-red-500"></div><div class="dot bg-yellow-500"></div><div class="dot bg-green-500"></div>
+                            <span class="ml-3 text-xs text-gray-500 font-mono">promofasts.com</span>
+                        </div>
+                        <div class="relative h-[350px] bg-gray-900 overflow-hidden">
+                             <!-- IMPORTANTE: Coloque o print aqui -->
+                            <img src="print-promofasts.png" onerror="this.src='https://placehold.co/800x600/111/ff0055?text=Print+Promofasts'" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Games Release -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center group">
+                    <div class="browser-mockup shadow-purple-500/20 transition-transform duration-500 group-hover:scale-[1.02] group-hover:shadow-purple-500/40 vanilla-tilt" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                        <div class="browser-header">
+                            <div class="dot bg-red-500"></div><div class="dot bg-yellow-500"></div><div class="dot bg-green-500"></div>
+                            <span class="ml-3 text-xs text-gray-500 font-mono">newgamesrelease.com</span>
+                        </div>
+                        <div class="relative h-[350px] bg-gray-900 overflow-hidden">
+                             <!-- IMPORTANTE: Coloque o print aqui -->
+                            <img src="print-newgames.png" onerror="this.src='https://placehold.co/800x600/111/bc13fe?text=Print+New+Games'" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-left">
+                        <h3 class="text-3xl font-display font-bold text-white mb-2">New Games Release</h3>
+                        <p class="text-cyber-purple font-mono text-sm tracking-widest mb-6">GAMING PLATFORM & API</p>
+                        
+                        <p class="text-gray-400 mb-6 text-lg leading-relaxed">
+                            Ecossistema completo para gamers. Integração com API IGDB, sistema de pagamentos global e arquitetura segura.
+                        </p>
+
+                        <div class="glass-card p-5 rounded-lg border-l-4 border-cyber-purple mb-8">
+                            <ul class="space-y-2 font-mono text-sm text-gray-300">
+                                <li class="flex items-center"><i class="fas fa-server text-cyber-purple w-6"></i> Backend puro em <span class="text-white ml-1">Go (Golang)</span></li>
+                                <li class="flex items-center"><i class="fas fa-shield-alt text-cyber-purple w-6"></i> Cloudflare + Nginx Proxy</li>
+                                <li class="flex items-center"><i class="fab fa-stripe text-cyber-purple w-6"></i> Stripe & Mercado Pago</li>
+                            </ul>
+                        </div>
+
+                        <a href="https://newgamesrelease.com" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-cyber-purple/10 text-cyber-purple border border-cyber-purple rounded hover:bg-cyber-purple hover:text-black transition-all font-bold">
+                            VISITAR PROJETO <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
                 </div>
-            </div>
 
-            <div class="section-card rounded-2xl p-2 sm:p-8 fade-in">
-                <h3 class="text-3xl sm:text-5xl font-bold text-center mb-8 text-red-500">
-                    New Games Release
-                </h3>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    <div class="space-y-6">
-                        <p class="text-lg text-gray-300">
-                            Plataforma inovadora de jogos com integração com a API IGDB, sistema de login seguro, 
-                            pagamentos via Stripe e Mercado Pago, e backend desenvolvido em Go com PostgreSQL. 
-                            Toda a infraestrutura está rodando em Docker em uma VPS privada. Implementação do 
-                            pipeline de deploy automático usando GitHub Actions. Além disso, o sistema conta com 
-                            proteção via Cloudflare e integração com a API do Aliexpress para promoções automáticas.
-                        </p>
-                        
-                        <div class="bg-gray-800 rounded-xl p-2 flex items-center justify-center">
-                            <iframe 
-                                src="https://newgamesrelease.com" 
-                                class="w-full h-[40rem] rounded-lg border-0"
-                                title="New Games Release"
-                            ></iframe>
-                        </div>
-                        
-                        <div class="space-y-4">
-                            <h4 class="text-xl font-semibold text-white">Tecnologias utilizadas:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">React</span>
-                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Go</span>
-                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">PostgreSQL</span>
-                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Docker</span>
-                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Stripe</span>
-                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">NGINX</span>
-                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Cloudflare</span>
-                            </div>
-                            
-                            <a
-                                href="https://newgamesrelease.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="inline-flex items-center space-x-2 btn-primary text-white px-6 py-3 rounded-lg font-semibold"
-                            >
-                                <span>Ver Projeto</span>
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiência (Timeline Estilizada) -->
+    <section id="about" class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-display font-bold mb-16 text-center text-white" data-aos="fade-up">
+                CARREIRA & <span class="text-cyber-primary">XP</span>
+            </h2>
+
+            <div class="relative max-w-4xl mx-auto pl-6 sm:pl-0">
+                <!-- Linha Neon Vertical -->
+                <div class="timeline-line"></div>
+
+                <!-- XP 1 -->
+                <div class="relative mb-16 sm:flex justify-between items-center w-full group" data-aos="fade-up">
+                    <div class="order-1 sm:w-5/12 sm:text-right">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-cyber-primary transition">New Games Release</h3>
+                        <p class="font-mono text-sm text-gray-400">2025 - Presente</p>
                     </div>
-                    
-                    <div class="space-y-6">
-                        <h4 class="text-2xl sm:text-3xl font-bold text-red-400">Chatbot Discord</h4>
-                        
-                        <p class="text-gray-300">
-                            Desenvolvi um chatbot para o Discord que funciona como um jogo interativo de cartas. 
-                            Ele permite que usuários coletem cartas, batalhem com amigos e participem de competições. 
-                            O bot também é integrado com a API do Discord e oferece uma experiência completa de "jogo" dentro de um chat.
-                        </p>
-                        
-                        <p class="text-gray-300">
-                            Além disso, o chatbot está disponível com tradução para <strong class="text-red-400">3 idiomas</strong>: 
-                            <strong class="text-blue-400">Português</strong> (nativo), 
-                            <strong class="text-green-400">Inglês</strong> e 
-                            <strong class="text-yellow-400">Espanhol</strong>.
-                        </p>
-                        
-                        <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="https://image.newgamesrelease.com/cardgame/coletar.gif" alt="Chatbot - Coletar cartas" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://image.newgamesrelease.com/cardgame/tarefas.jpg" alt="Chatbot - Tarefas" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://image.newgamesrelease.com/cardgame/missoes.jpg" alt="Chatbot - Missões" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://image.newgamesrelease.com/cardgame/mercado.gif" alt="Chatbot - Mercado" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://image.newgamesrelease.com/cardgame/LeagueOfLegends/collection-league-of-legends.webp" alt="Chatbot - League of Legends" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://image.newgamesrelease.com/cardgame/GrandTheftAutoV/collection-grand-theft-auto-v.webp" alt="Chatbot - GTA V" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://image.newgamesrelease.com/cardgame/Minecraft/collection-minecraft.webp" alt="Chatbot - Minecraft" class="w-full h-72 sm:h-[30rem] object-cover rounded-xl">
-                                </div>
-                            </div>
-                            <div class="swiper-button-next text-red-500"></div>
-                            <div class="swiper-button-prev text-red-500"></div>
-                        </div>
-                        
-                        <div class="bg-gray-800/50 rounded-xl p-6 text-center">
-                            <p class="text-gray-300">
-                                Aproximadamente <span class="font-bold text-red-400">1500 usuários cadastrados</span> e 
-                                <span class="font-bold text-blue-400">100 usuários diários</span> jogando e interagindo com o bot.
-                            </p>
-                        </div>
-                        
-                        <div class="space-y-4">
-                            <h5 class="text-lg font-semibold text-white">Tecnologias utilizadas:</h5>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Go</span>
-                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">PostgreSQL</span>
-                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Discord API</span>
-                            </div>
-                            
-                            <a
-                                href="https://newgamesrelease.com/Tutorial/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="inline-flex items-center space-x-2 btn-primary text-white px-6 py-3 rounded-lg font-semibold"
-                            >
-                                <span>Acessar Tutorial</span>
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
+                    <div class="z-20 flex items-center order-1 bg-black border-2 border-cyber-primary shadow-[0_0_15px_#00f3ff] w-5 h-5 rounded-full absolute left-[-9px] sm:static sm:mx-auto"></div>
+                    <div class="order-1 sm:w-5/12 glass-card p-6 rounded-xl mt-4 sm:mt-0 group-hover:border-cyber-primary/50 transition">
+                        <p class="text-gray-300 text-sm">Desenvolvimento Full-Stack. Liderança técnica na arquitetura Go, Docker e CI/CD.</p>
+                    </div>
+                </div>
+
+                <!-- XP 2 -->
+                <div class="relative mb-16 sm:flex justify-between items-center w-full group" data-aos="fade-up">
+                    <div class="order-1 sm:w-5/12 glass-card p-6 rounded-xl mt-4 sm:mt-0 sm:text-right group-hover:border-blue-500/50 transition">
+                        <p class="text-gray-300 text-sm">Desenvolvedor Júnior. Integrações complexas de ERP usando Delphi, C# e SQL.</p>
+                    </div>
+                    <div class="z-20 flex items-center order-1 bg-black border-2 border-blue-500 shadow-[0_0_15px_#3b82f6] w-5 h-5 rounded-full absolute left-[-9px] sm:static sm:mx-auto"></div>
+                    <div class="order-1 sm:w-5/12">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-blue-500 transition">Viasoft Korp ERP</h3>
+                        <p class="font-mono text-sm text-gray-400">2024 - 2025</p>
+                    </div>
+                </div>
+
+                <!-- XP 3 -->
+                <div class="relative mb-16 sm:flex justify-between items-center w-full group" data-aos="fade-up">
+                    <div class="order-1 sm:w-5/12 sm:text-right">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-green-500 transition">PH Sys</h3>
+                        <p class="font-mono text-sm text-gray-400">2024</p>
+                    </div>
+                    <div class="z-20 flex items-center order-1 bg-black border-2 border-green-500 shadow-[0_0_15px_#22c55e] w-5 h-5 rounded-full absolute left-[-9px] sm:static sm:mx-auto"></div>
+                    <div class="order-1 sm:w-5/12 glass-card p-6 rounded-xl mt-4 sm:mt-0 group-hover:border-green-500/50 transition">
+                        <p class="text-gray-300 text-sm">Desenvolvedor Júnior. Implementação de funcionalidades e automação de sistemas internos.</p>
+                    </div>
+                </div>
+
+                <!-- XP 4 -->
+                <div class="relative mb-16 sm:flex justify-between items-center w-full group" data-aos="fade-up">
+                    <div class="order-1 sm:w-5/12 glass-card p-6 rounded-xl mt-4 sm:mt-0 sm:text-right group-hover:border-purple-500/50 transition">
+                        <p class="text-gray-300 text-sm">Suporte Técnico. Resolução de bugs, scripts SQL e atendimento especializado.</p>
+                    </div>
+                    <div class="z-20 flex items-center order-1 bg-black border-2 border-purple-500 shadow-[0_0_15px_#a855f7] w-5 h-5 rounded-full absolute left-[-9px] sm:static sm:mx-auto"></div>
+                    <div class="order-1 sm:w-5/12">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-purple-500 transition">PH Sys</h3>
+                        <p class="font-mono text-sm text-gray-400">2021 - 2024</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contato" class="py-20 px-4">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl sm:text-5xl font-bold mb-8 text-red-500 fade-in">
-                Fale Comigo
-            </h2>
-            
-            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto fade-in">
-                Entre em contato para novas oportunidades e projetos. Você pode me encontrar nas redes sociais abaixo:
+    <!-- Stack Arsenal -->
+    <section id="stack" class="py-24 container mx-auto px-6">
+        <h2 class="text-4xl font-display font-bold mb-16 text-center text-white" data-aos="fade-up">
+            ARSENAL <span class="text-cyber-secondary">TECNOLÓGICO</span>
+        </h2>
+
+        <div class="grid md:grid-cols-4 gap-6">
+            <!-- Coluna 1 -->
+            <div class="glass-card p-6 rounded-xl border-t-2 border-cyber-primary hover:-translate-y-2 transition-transform">
+                <h4 class="font-display font-bold text-cyber-primary mb-4 text-lg">BACKEND</h4>
+                <ul class="space-y-3 font-mono text-sm text-gray-400">
+                    <li class="flex items-center hover:text-white transition"><i class="fab fa-golang w-6 text-cyan-400"></i> Go (Expert)</li>
+                    <li class="flex items-center hover:text-white transition"><i class="fab fa-node w-6 text-green-400"></i> Node.js</li>
+                    <li class="flex items-center hover:text-white transition"><i class="fas fa-code w-6 text-blue-500"></i> C# / .NET</li>
+                </ul>
+            </div>
+
+            <!-- Coluna 2 -->
+            <div class="glass-card p-6 rounded-xl border-t-2 border-blue-500 hover:-translate-y-2 transition-transform">
+                <h4 class="font-display font-bold text-blue-500 mb-4 text-lg">FRONTEND</h4>
+                <ul class="space-y-3 font-mono text-sm text-gray-400">
+                    <li class="flex items-center hover:text-white transition"><i class="fab fa-react w-6 text-blue-400"></i> React.js</li>
+                    <li class="flex items-center hover:text-white transition"><i class="fab fa-js w-6 text-yellow-400"></i> TypeScript</li>
+                    <li class="flex items-center hover:text-white transition"><i class="fas fa-wind w-6 text-teal-300"></i> Tailwind</li>
+                </ul>
+            </div>
+
+            <!-- Coluna 3 -->
+            <div class="glass-card p-6 rounded-xl border-t-2 border-purple-500 hover:-translate-y-2 transition-transform">
+                <h4 class="font-display font-bold text-purple-500 mb-4 text-lg">DEVOPS</h4>
+                <ul class="space-y-3 font-mono text-sm text-gray-400">
+                    <li class="flex items-center hover:text-white transition"><i class="fab fa-docker w-6 text-blue-600"></i> Docker</li>
+                    <li class="flex items-center hover:text-white transition"><i class="fas fa-server w-6 text-green-500"></i> Nginx / VPS</li>
+                    <li class="flex items-center hover:text-white transition"><i class="fab fa-github w-6 text-white"></i> CI/CD</li>
+                </ul>
+            </div>
+
+            <!-- Coluna 4 -->
+            <div class="glass-card p-6 rounded-xl border-t-2 border-gray-500 hover:-translate-y-2 transition-transform opacity-80 hover:opacity-100">
+                <h4 class="font-display font-bold text-gray-400 mb-4 text-lg">LEGACY & TOOLS</h4>
+                <ul class="space-y-3 font-mono text-sm text-gray-500">
+                    <li class="flex items-center hover:text-white transition"><i class="fas fa-desktop w-6"></i> Delphi</li>
+                    <li class="flex items-center hover:text-white transition"><i class="fas fa-database w-6"></i> SQL Server</li>
+                    <li class="flex items-center hover:text-white transition"><i class="fas fa-moon w-6"></i> Lua</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="text-5xl font-display font-bold text-white mb-8" data-aos="zoom-in">VAMOS CONVERSAR?</h2>
+            <p class="text-xl text-gray-400 mb-12" data-aos="fade-up" data-aos-delay="100">
+                Transformando café em código e ideias em realidade.
             </p>
-            
-            <div class="flex justify-center gap-6 text-3xl fade-in">
-                <a
-                    href="mailto:tiagopdeliz@gmail.com"
-                    class="p-4 bg-red-600 rounded-xl text-white hover:bg-red-700 transition-all duration-300 hover:scale-110"
-                    title="Email"
-                >
+
+            <div class="flex justify-center gap-8" data-aos="fade-up" data-aos-delay="200">
+                <a href="mailto:tiagopdeliz@gmail.com" class="w-16 h-16 rounded-lg glass-card flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-red-600 hover:shadow-neon-pink transition-all hover:-translate-y-2">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a
-                    href="https://github.com/Tiago-De-Liz"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="p-4 bg-gray-700 rounded-xl text-white hover:bg-gray-600 transition-all duration-300 hover:scale-110"
-                    title="GitHub"
-                >
+                <a href="https://github.com/Tiago-De-Liz" target="_blank" class="w-16 h-16 rounded-lg glass-card flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-gray-700 hover:shadow-[0_0_15px_white] transition-all hover:-translate-y-2">
                     <i class="fab fa-github"></i>
                 </a>
-                <a
-                    href="https://www.instagram.com/tiago_deliz/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="p-4 bg-pink-600 rounded-xl text-white hover:bg-pink-700 transition-all duration-300 hover:scale-110"
-                    title="Instagram"
-                >
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a
-                    href="https://wa.me/47988537408"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="p-4 bg-green-600 rounded-xl text-white hover:bg-green-700 transition-all duration-300 hover:scale-110"
-                    title="WhatsApp"
-                >
+                <a href="https://wa.me/47988537408" target="_blank" class="w-16 h-16 rounded-lg glass-card flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-green-600 hover:shadow-[0_0_15px_lime] transition-all hover:-translate-y-2">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a
-                    href="https://discord.gg/mPJnmUJJRD"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="p-4 bg-indigo-600 rounded-xl text-white hover:bg-indigo-700 transition-all duration-300 hover:scale-110"
-                    title="Discord"
-                >
+                <a href="https://discord.gg/mPJnmUJJRD" target="_blank" class="w-16 h-16 rounded-lg glass-card flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-indigo-600 hover:shadow-[0_0_15px_indigo] transition-all hover:-translate-y-2">
                     <i class="fab fa-discord"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="text-center py-8 border-t border-gray-700/50">
-        <p class="text-gray-400">
-            © 2025 Tiago De Liz - Todos os direitos reservados.
-        </p>
+    <footer class="bg-black py-8 border-t border-white/10 text-center font-mono text-xs text-gray-600">
+        <p>&copy; 2025 TIAGO DE LIZ. ALL RIGHTS RESERVED.</p>
     </footer>
 
+    <!-- Scripts Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
     <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const hamburgerIcon = document.getElementById('hamburger-icon');
+        // Init AOS
+        AOS.init({ once: true, offset: 50, duration: 800 });
 
-        menuToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
+        // Init Vanilla Tilt
+        VanillaTilt.init(document.querySelectorAll(".vanilla-tilt"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+        });
+
+        // --- BACKGROUND 3D (Network Effect) ---
+        const initThreeJS = () => {
+            const container = document.getElementById('canvas-container');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
             
-            if (mobileMenu.classList.contains('hidden')) {
-                hamburgerIcon.className = 'fas fa-bars';
-            } else {
-                hamburgerIcon.className = 'fas fa-times';
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+
+            // Particles
+            const geometry = new THREE.BufferGeometry();
+            const count = 150;
+            const positions = new Float32Array(count * 3);
+            
+            for(let i=0; i<count*3; i++) {
+                positions[i] = (Math.random() - 0.5) * 25;
             }
-        });
-
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                hamburgerIcon.className = 'fas fa-bars';
+            
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            
+            const material = new THREE.PointsMaterial({
+                size: 0.05,
+                color: 0x00f3ff,
+                transparent: true,
+                opacity: 0.8
             });
-        });
+            
+            const particles = new THREE.Points(geometry, material);
+            scene.add(particles);
 
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            // Lines connecting nearby particles
+            const lineMaterial = new THREE.LineBasicMaterial({ color: 0x7000ff, transparent: true, opacity: 0.15 });
+            const linesGeometry = new THREE.BufferGeometry();
+            const lines = new THREE.LineSegments(linesGeometry, lineMaterial);
+            scene.add(lines);
+
+            camera.position.z = 5;
+
+            // Animation
+            const animate = () => {
+                requestAnimationFrame(animate);
+                
+                particles.rotation.y += 0.002;
+                particles.rotation.x += 0.001;
+
+                // Update lines dynamically (simplified for performance)
+                const positions = particles.geometry.attributes.position.array;
+                const linePositions = [];
+                
+                // Rotate calculation not strictly necessary for simple visual, 
+                // just rotating the mesh group is cleaner.
+                lines.rotation.y += 0.002;
+                lines.rotation.x += 0.001;
+                
+                // Static geometric wireframe for extra tech feel
+                if(!scene.getObjectByName('wireframe')) {
+                    const geo = new THREE.IcosahedronGeometry(8, 1);
+                    const mat = new THREE.LineBasicMaterial({ color: 0x222222, transparent: true, opacity: 0.1 });
+                    const wire = new THREE.LineSegments(new THREE.WireframeGeometry(geo), mat);
+                    wire.name = 'wireframe';
+                    scene.add(wire);
+                } else {
+                    const wire = scene.getObjectByName('wireframe');
+                    wire.rotation.y -= 0.001;
+                }
+
+                renderer.render(scene, camera);
+            };
+
+            animate();
+
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
         };
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        const swiper = new Swiper('.swiper', {
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            slidesPerView: 1,
-            spaceBetween: 10,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-            }
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+        initThreeJS();
     </script>
 </body>
 </html>
-
