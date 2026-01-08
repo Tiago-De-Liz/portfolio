@@ -1,0 +1,29 @@
+/* HUMANSTXT.ORG */
+
+/* EQUIPE */
+    Desenvolvedor: Tiago De Liz
+    Localização: Blumenau, Santa Catarina, Brasil
+    Contato: tiagopdeliz [at] gmail.com
+    GitHub: github.com/Tiago-De-Liz
+    LinkedIn: linkedin.com/in/tiago-de-liz
+    Portfólio: tiago-liz.vercel.app
+
+/* SITE */
+    Última atualização: 2026/01/08
+    Linguagem: Português (Brasil)
+    Padrões: HTML5, CSS3, JavaScript ES6+
+    Componentes: Tailwind CSS, Three.js, AOS
+    IDE: Visual Studio Code
+    Hospedagem: Vercel
+
+/* TECNOLOGIAS */
+    Backend: Go (Golang), Node.js, C#
+    Frontend: React.js, Next.js, TypeScript
+    Database: PostgreSQL, Redis
+    DevOps: Docker, Nginx, GitHub Actions
+    Cloud: VPS, Cloudflare
+
+/* AGRADECIMENTOS */
+    À comunidade open source
+    Aos recrutadores que visitam este portfólio
+    À família e amigos pelo apoio

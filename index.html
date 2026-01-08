@@ -1,14 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio High-Tech de Tiago De Liz - Full Stack Developer">
-    <title>Tiago De Liz | System Architect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Primary Meta Tags -->
+    <title>Tiago De Liz | Desenvolvedor Backend Go & Full Stack | Blumenau SC</title>
+    <meta name="title" content="Tiago De Liz | Desenvolvedor Backend Go & Full Stack | Blumenau SC">
+    <meta name="description"
+        content="Desenvolvedor Backend especialista em Go (Golang), Full Stack e arquitetura de microsserviços. Criador de SaaS próprio: Grup-ify, Promofasts e New Games Release. Expert em Docker, React, PostgreSQL e DevOps. Blumenau, Santa Catarina, Brasil.">
+    <meta name="keywords"
+        content="desenvolvedor go, golang developer, backend developer blumenau, full stack developer, desenvolvedor saas, arquiteto de software, microservices, docker specialist, react developer, postgresql, redis, devops engineer, desenvolvedor blumenau sc, whatsapp api integration, crm development, desenvolvedor backend go brasil, criador saas, next.js developer, typescript, ci/cd, nginx, cloud infrastructure">
+    <meta name="author" content="Tiago De Liz">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://tiago-liz.vercel.app">
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="BR-SC">
+    <meta name="geo.placename" content="Blumenau">
+    <meta name="geo.position" content="-26.918832;-49.066040">
+    <meta name="ICBM" content="-26.918832, -49.066040">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://tiago-liz.vercel.app">
+    <meta property="og:site_name" content="Tiago De Liz - Portfolio">
+    <meta property="og:title" content="Tiago De Liz | Desenvolvedor Backend Go & Full Stack">
+    <meta property="og:description"
+        content="Desenvolvedor Backend especialista em Go (Golang), Full Stack e arquitetura de microsserviços. Criador de SaaS próprio: Grup-ify, Promofasts e New Games Release. Blumenau, SC, Brasil.">
+    <meta property="og:image" content="https://tiago-liz.vercel.app/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="profile:first_name" content="Tiago">
+    <meta property="profile:last_name" content="De Liz">
+    <meta property="profile:username" content="Tiago-De-Liz">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tiago-liz.vercel.app">
+    <meta property="twitter:title" content="Tiago De Liz | Desenvolvedor Backend Go & Full Stack">
+    <meta property="twitter:description"
+        content="Desenvolvedor Backend especialista em Go (Golang), Full Stack e arquitetura de microsserviços. Criador de SaaS próprio. Blumenau, SC, Brasil.">
+    <meta property="twitter:image" content="https://tiago-liz.vercel.app/og-image.jpg">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#00f3ff">
+    <meta name="msapplication-TileColor" content="#030305">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Humans -->
+    <link type="text/plain" rel="author" href="/humans.txt">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Configurações Visuais (Neon & Fontes) -->
     <script>
         tailwind.config = {
@@ -50,24 +107,48 @@
     </script>
 
     <!-- Fontes & Ícones -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Fira+Code:wght@400;600&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Fira+Code:wght@400;600&family=Orbitron:wght@500;700;900&display=swap"
+        rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         /* Estilos Globais */
-        body { background-color: #030305; color: #e0e0e0; overflow-x: hidden; }
-        
+        body {
+            background-color: #030305;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
         /* Scrollbar Neon */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #030305; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #00f3ff; }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #030305;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f3ff;
+        }
 
         /* Fundo 3D */
         #canvas-container {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-            opacity: 0.6; pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+            pointer-events: none;
         }
 
         /* Efeito Glassmorphism (Vidro) */
@@ -90,18 +171,26 @@
             border-radius: 12px;
             overflow: hidden;
             background: #1a1b26;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transform-style: preserve-3d;
             transform: perspective(1000px);
         }
+
         .browser-header {
             background: #0f0f13;
             padding: 10px 15px;
-            display: flex; gap: 8px; align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .dot { width: 10px; height: 10px; border-radius: 50%; }
-        
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
         /* Marquee Infinito */
         .marquee-wrapper {
             position: relative;
@@ -110,31 +199,57 @@
             background: linear-gradient(90deg, #030305 0%, transparent 10%, transparent 90%, #030305 100%);
             mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
+
         .marquee-content {
             display: flex;
             width: max-content;
             animation: scroll 25s linear infinite;
         }
+
         .marquee-item {
             padding: 0 3rem;
-            display: flex; align-items: center; gap: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
             font-size: 1.5rem;
             opacity: 0.5;
             transition: 0.3s;
         }
-        .marquee-item:hover { opacity: 1; text-shadow: 0 0 15px currentColor; }
-        
-        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        .marquee-item:hover {
+            opacity: 1;
+            text-shadow: 0 0 15px currentColor;
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
 
         /* Timeline da XP */
         .timeline-line {
-            position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
             background: linear-gradient(to bottom, #00f3ff, #bc13fe, transparent);
-            left: 50%; transform: translateX(-50%);
+            left: 50%;
+            transform: translateX(-50%);
         }
-        @media (max-width: 768px) { .timeline-line { left: 20px; } }
+
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 20px;
+            }
+        }
 
         /* Gradient Text */
         .text-gradient {
@@ -144,30 +259,38 @@
         }
     </style>
 </head>
+
 <body class="antialiased selection:bg-cyber-primary selection:text-black">
 
     <!-- Fundo 3D -->
     <div id="canvas-container"></div>
 
     <!-- Navegação -->
-    <nav class="fixed w-full z-50 bg-cyber-bg/80 backdrop-blur-md border-b border-white/5 py-4 transition-all duration-300">
+    <nav
+        class="fixed w-full z-50 bg-cyber-bg/80 backdrop-blur-md border-b border-white/5 py-4 transition-all duration-300">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="text-2xl font-display font-bold tracking-widest text-white hover:text-cyber-primary transition">
+            <a href="#"
+                class="text-2xl font-display font-bold tracking-widest text-white hover:text-cyber-primary transition">
                 TIAGO<span class="text-cyber-primary">.DEV</span>
             </a>
-            
+
             <div class="hidden md:flex space-x-8 font-mono text-sm tracking-wide text-gray-400">
-                <a href="#about" class="hover:text-cyber-primary hover:shadow-neon-blue transition duration-300">_SOBRE</a>
-                <a href="#projects" class="hover:text-cyber-primary hover:shadow-neon-blue transition duration-300">_PROJETOS</a>
-                <a href="#stack" class="hover:text-cyber-primary hover:shadow-neon-blue transition duration-300">_STACK</a>
-                <a href="#contact" class="hover:text-cyber-primary hover:shadow-neon-blue transition duration-300">_CONTATO</a>
+                <a href="#about"
+                    class="hover:text-cyber-primary hover:shadow-neon-blue transition duration-300">_SOBRE</a>
+                <a href="#projects"
+                    class="hover:text-cyber-primary hover:shadow-neon-blue transition duration-300">_PROJETOS</a>
+                <a href="#stack"
+                    class="hover:text-cyber-primary hover:shadow-neon-blue transition duration-300">_STACK</a>
+                <a href="#contact"
+                    class="hover:text-cyber-primary hover:shadow-neon-blue transition duration-300">_CONTATO</a>
             </div>
 
-            <button class="md:hidden text-white text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <button class="md:hidden text-white text-2xl"
+                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        
+
         <!-- Menu Mobile -->
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-cyber-bg border-b border-gray-800 p-4">
             <div class="flex flex-col space-y-4 font-mono text-center">
@@ -181,12 +304,16 @@
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center justify-center pt-20 px-6 relative overflow-hidden">
         <!-- Elementos Flutuantes de Fundo -->
-        <div class="absolute top-20 left-10 w-32 h-32 bg-cyber-primary/10 rounded-full blur-[80px] animate-pulse-slow"></div>
-        <div class="absolute bottom-20 right-10 w-40 h-40 bg-cyber-secondary/10 rounded-full blur-[80px] animate-pulse-slow"></div>
+        <div class="absolute top-20 left-10 w-32 h-32 bg-cyber-primary/10 rounded-full blur-[80px] animate-pulse-slow">
+        </div>
+        <div
+            class="absolute bottom-20 right-10 w-40 h-40 bg-cyber-secondary/10 rounded-full blur-[80px] animate-pulse-slow">
+        </div>
 
         <div class="container mx-auto grid lg:grid-cols-2 gap-12 items-center z-10">
             <div data-aos="fade-right" data-aos-duration="1000">
-                <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-cyber-primary/30 rounded bg-cyber-primary/5 text-cyber-primary font-mono text-xs tracking-widest">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-cyber-primary/30 rounded bg-cyber-primary/5 text-cyber-primary font-mono text-xs tracking-widest">
                     <span class="w-2 h-2 rounded-full bg-cyber-primary animate-pulse"></span>
                     SYSTEM ONLINE
                 </div>
@@ -196,14 +323,19 @@
                 </h1>
                 <p class="text-xl text-gray-400 mb-8 max-w-lg leading-relaxed border-l-2 border-cyber-purple pl-6">
                     Desenvolvedor Full-Stack High-End. <br>
-                    Especialista em arquiteturas <strong class="text-white">Go</strong>, <strong class="text-white">React</strong> e microsserviços escaláveis.
+                    Especialista em arquiteturas <strong class="text-white">Go</strong>, <strong
+                        class="text-white">React</strong> e microsserviços escaláveis.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="group relative px-8 py-4 bg-transparent overflow-hidden rounded border border-cyber-primary text-white font-bold font-display tracking-wide hover:shadow-neon-blue transition-all">
-                        <div class="absolute top-0 left-0 w-full h-full bg-cyber-primary/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                    <a href="#projects"
+                        class="group relative px-8 py-4 bg-transparent overflow-hidden rounded border border-cyber-primary text-white font-bold font-display tracking-wide hover:shadow-neon-blue transition-all">
+                        <div
+                            class="absolute top-0 left-0 w-full h-full bg-cyber-primary/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-300">
+                        </div>
                         <span class="relative flex items-center gap-2">VER PROJETOS <i class="fas fa-code"></i></span>
                     </a>
-                    <a href="https://github.com/Tiago-De-Liz" target="_blank" class="px-8 py-4 rounded border border-white/10 hover:bg-white/5 text-gray-300 hover:text-white transition flex items-center gap-2 font-mono">
+                    <a href="https://github.com/Tiago-De-Liz" target="_blank"
+                        class="px-8 py-4 rounded border border-white/10 hover:bg-white/5 text-gray-300 hover:text-white transition flex items-center gap-2 font-mono">
                         <i class="fab fa-github"></i> GITHUB
                     </a>
                 </div>
@@ -213,19 +345,28 @@
             <div class="relative flex justify-center perspective-1000" data-aos="zoom-in" data-aos-delay="200">
                 <div class="relative w-72 h-72 sm:w-96 sm:h-96 group">
                     <!-- Anéis Giratórios -->
-                    <div class="absolute inset-0 border border-cyber-primary/40 rounded-full animate-[spin_10s_linear_infinite]"></div>
-                    <div class="absolute inset-4 border border-dashed border-cyber-purple/40 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
-                    
+                    <div
+                        class="absolute inset-0 border border-cyber-primary/40 rounded-full animate-[spin_10s_linear_infinite]">
+                    </div>
+                    <div
+                        class="absolute inset-4 border border-dashed border-cyber-purple/40 rounded-full animate-[spin_15s_linear_infinite_reverse]">
+                    </div>
+
                     <!-- Imagem -->
-                    <div class="absolute inset-6 rounded-full overflow-hidden border-2 border-gray-700 shadow-[0_0_40px_rgba(0,243,255,0.2)] bg-black z-10">
-                        <img src="profile.jpeg" alt="Tiago De Liz" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
+                    <div
+                        class="absolute inset-6 rounded-full overflow-hidden border-2 border-gray-700 shadow-[0_0_40px_rgba(0,243,255,0.2)] bg-black z-10">
+                        <img src="profile.jpeg"
+                            alt="Tiago De Liz - Desenvolvedor Backend Go e Full Stack em Blumenau SC"
+                            class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
                     </div>
 
                     <!-- Badges Flutuantes -->
-                    <div class="absolute top-0 right-0 glass-card p-3 rounded-lg border-cyber-primary/30 animate-float z-20">
+                    <div
+                        class="absolute top-0 right-0 glass-card p-3 rounded-lg border-cyber-primary/30 animate-float z-20">
                         <i class="fab fa-golang text-4xl text-cyan-400 drop-shadow-[0_0_5px_rgba(0,243,255,0.8)]"></i>
                     </div>
-                    <div class="absolute bottom-10 left-0 glass-card p-3 rounded-lg border-cyber-purple/30 animate-float z-20" style="animation-delay: 1.5s">
+                    <div class="absolute bottom-10 left-0 glass-card p-3 rounded-lg border-cyber-purple/30 animate-float z-20"
+                        style="animation-delay: 1.5s">
                         <i class="fab fa-react text-4xl text-blue-400 drop-shadow-[0_0_5px_rgba(59,130,246,0.8)]"></i>
                     </div>
                 </div>
@@ -247,7 +388,7 @@
                 <div class="marquee-item text-green-400"><i class="fas fa-server"></i> NGINX</div>
                 <div class="marquee-item text-purple-500"><i class="fab fa-github"></i> ACTIONS</div>
                 <div class="marquee-item text-orange-500"><i class="fab fa-aws"></i> CLOUD</div>
-                
+
                 <!-- Repetição -->
                 <div class="marquee-item text-cyan-400"><i class="fab fa-golang"></i> GOLANG</div>
                 <div class="marquee-item text-blue-400"><i class="fab fa-react"></i> REACT</div>
@@ -262,6 +403,148 @@
         </div>
     </div>
 
+    <!-- Social Proof / Stats Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-display font-bold mb-16 text-center text-white" data-aos="fade-up">
+                COMPROVADO EM <span
+                    class="text-cyber-primary drop-shadow-[0_0_10px_rgba(0,243,255,0.5)]">PRODUÇÃO</span>
+            </h2>
+
+            <!-- Stats Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Stat 1 -->
+                <div class="glass-card p-8 rounded-xl text-center group hover:border-cyber-primary/50 transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div
+                        class="text-5xl font-display font-bold text-cyber-primary mb-2 group-hover:scale-110 transition-transform">
+                        3
+                    </div>
+                    <div class="text-sm font-mono text-gray-400 uppercase tracking-widest">
+                        SaaS em Produção
+                    </div>
+                    <div class="mt-3 text-xs text-gray-500">
+                        Com usuários reais ativos
+                    </div>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="glass-card p-8 rounded-xl text-center group hover:border-cyber-secondary/50 transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="text-5xl font-display font-bold text-cyber-secondary mb-2 group-hover:scale-110 transition-transform">
+                        +50K
+                    </div>
+                    <div class="text-sm font-mono text-gray-400 uppercase tracking-widest">
+                        Requisições/Dia
+                    </div>
+                    <div class="mt-3 text-xs text-gray-500">
+                        Processadas nos projetos
+                    </div>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="glass-card p-8 rounded-xl text-center group hover:border-cyber-purple/50 transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="text-5xl font-display font-bold text-cyber-purple mb-2 group-hover:scale-110 transition-transform">
+                        99.9%
+                    </div>
+                    <div class="text-sm font-mono text-gray-400 uppercase tracking-widest">
+                        Uptime
+                    </div>
+                    <div class="mt-3 text-xs text-gray-500">
+                        Últimos 6 meses
+                    </div>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="glass-card p-8 rounded-xl text-center group hover:border-green-500/50 transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="text-5xl font-display font-bold text-green-400 mb-2 group-hover:scale-110 transition-transform">
+                        +1M
+                    </div>
+                    <div class="text-sm font-mono text-gray-400 uppercase tracking-widest">
+                        Dados Processados
+                    </div>
+                    <div class="mt-3 text-xs text-gray-500">
+                        Mensagens, produtos, registros
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Badges -->
+            <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                <div
+                    class="glass-card px-5 py-3 rounded-lg border-l-4 border-cyber-primary flex items-center gap-3 hover:bg-cyber-primary/5 transition">
+                    <i class="fas fa-rocket text-cyber-primary text-xl"></i>
+                    <span class="font-mono text-sm text-gray-300">Arquitetura de Alta Escala</span>
+                </div>
+                <div
+                    class="glass-card px-5 py-3 rounded-lg border-l-4 border-cyber-secondary flex items-center gap-3 hover:bg-cyber-secondary/5 transition">
+                    <i class="fas fa-shield-alt text-cyber-secondary text-xl"></i>
+                    <span class="font-mono text-sm text-gray-300">Sistemas Críticos em Produção</span>
+                </div>
+                <div
+                    class="glass-card px-5 py-3 rounded-lg border-l-4 border-cyber-purple flex items-center gap-3 hover:bg-cyber-purple/5 transition">
+                    <i class="fas fa-users text-cyber-purple text-xl"></i>
+                    <span class="font-mono text-sm text-gray-300">+1000 Usuários Ativos</span>
+                </div>
+                <div
+                    class="glass-card px-5 py-3 rounded-lg border-l-4 border-green-400 flex items-center gap-3 hover:bg-green-400/5 transition">
+                    <i class="fas fa-code-branch text-green-400 text-xl"></i>
+                    <span class="font-mono text-sm text-gray-300">CI/CD Automatizado</span>
+                </div>
+                <div
+                    class="glass-card px-5 py-3 rounded-lg border-l-4 border-yellow-400 flex items-center gap-3 hover:bg-yellow-400/5 transition">
+                    <i class="fas fa-chart-line text-yellow-400 text-xl"></i>
+                    <span class="font-mono text-sm text-gray-300">Performance Otimizada</span>
+                </div>
+            </div>
+
+            <!-- Case Study Highlight -->
+            <div class="mt-16 max-w-3xl mx-auto glass-card p-8 rounded-xl border border-cyber-primary/30"
+                data-aos="zoom-in">
+                <div class="flex items-start gap-4">
+                    <div class="text-4xl">💡</div>
+                    <div>
+                        <h3 class="text-xl font-display font-bold text-white mb-2">Destaque Técnico</h3>
+                        <p class="text-gray-300 mb-4">
+                            Desenvolvi o <strong class="text-cyber-primary">Grup-ify</strong> do zero até processar
+                            <strong>+10.000 mensagens WhatsApp por dia</strong>,
+                            utilizando <strong class="text-white">Go</strong> para performance extrema, <strong
+                                class="text-white">Redis</strong> para cache distribuído,
+                            e <strong class="text-white">Docker</strong> para deploy escalável.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-cyber-primary/10 text-cyber-primary rounded-full text-xs font-mono border border-cyber-primary/30">
+                                Golang
+                            </span>
+                            <span
+                                class="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-xs font-mono border border-blue-500/30">
+                                Redis
+                            </span>
+                            <span
+                                class="px-3 py-1 bg-purple-500/10 text-purple-400 rounded-full text-xs font-mono border border-purple-500/30">
+                                PostgreSQL
+                            </span>
+                            <span
+                                class="px-3 py-1 bg-blue-600/10 text-blue-300 rounded-full text-xs font-mono border border-blue-600/30">
+                                Docker
+                            </span>
+                            <span
+                                class="px-3 py-1 bg-green-500/10 text-green-400 rounded-full text-xs font-mono border border-green-500/30">
+                                Microservices
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projetos High-End -->
     <section id="projects" class="py-32 relative">
         <div class="container mx-auto px-6">
@@ -270,40 +553,54 @@
             </h2>
 
             <div class="flex flex-col gap-24">
-                
+
                 <!-- Grup-ify -->
                 <div class="grid lg:grid-cols-2 gap-12 items-center group">
                     <!-- Janela Mockup (Substitui Iframe) -->
-                    <div class="browser-mockup shadow-neon-blue/20 transition-transform duration-500 group-hover:scale-[1.02] group-hover:shadow-neon-blue/40 vanilla-tilt" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                    <div class="browser-mockup shadow-neon-blue/20 transition-transform duration-500 group-hover:scale-[1.02] group-hover:shadow-neon-blue/40 vanilla-tilt"
+                        data-tilt data-tilt-glare data-tilt-max-glare="0.3">
                         <div class="browser-header">
-                            <div class="dot bg-red-500"></div><div class="dot bg-yellow-500"></div><div class="dot bg-green-500"></div>
+                            <div class="dot bg-red-500"></div>
+                            <div class="dot bg-yellow-500"></div>
+                            <div class="dot bg-green-500"></div>
                             <span class="ml-3 text-xs text-gray-500 font-mono">grup-ify.com</span>
                         </div>
                         <div class="relative h-[350px] bg-gray-900 overflow-hidden">
                             <!-- IMPORTANTE: Coloque o print aqui -->
-                            <img src="print-grupify.png" onerror="this.src='https://placehold.co/800x600/111/00f3ff?text=Print+Grup-ify'" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                            <img src="print-grupify.png" alt="Grup-ify - CRM e Automação WhatsApp desenvolvido em Go"
+                                onerror="this.src='https://placehold.co/800x600/111/00f3ff?text=Print+Grup-ify'"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+                                loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent">
+                            </div>
                         </div>
                     </div>
 
                     <!-- Info -->
                     <div data-aos="fade-left">
                         <h3 class="text-3xl font-display font-bold text-white mb-2">Grup-ify</h3>
-                        <p class="text-cyber-primary font-mono text-sm tracking-widest mb-6">CRM & WHATSAPP AUTOMATION</p>
-                        
+                        <p class="text-cyber-primary font-mono text-sm tracking-widest mb-6">CRM & WHATSAPP AUTOMATION
+                        </p>
+
                         <p class="text-gray-400 mb-6 text-lg leading-relaxed">
-                            CRM robusto integrado ao WhatsApp. Desenvolvido para gerenciar leads em alta escala, controlar fluxos de mensagens e disparos em massa. Focado em performance extrema.
+                            CRM robusto integrado ao WhatsApp. Desenvolvido para gerenciar leads em alta escala,
+                            controlar fluxos de mensagens e disparos em massa. Focado em performance extrema.
                         </p>
 
                         <div class="glass-card p-5 rounded-lg border-l-4 border-cyber-primary mb-8">
                             <ul class="space-y-2 font-mono text-sm text-gray-300">
-                                <li class="flex items-center"><i class="fas fa-bolt text-cyber-primary w-6"></i> Backend em <span class="text-white ml-1">Go</span> para disparos rápidos</li>
-                                <li class="flex items-center"><i class="fas fa-database text-cyber-primary w-6"></i> <span class="text-white mx-1">Redis</span> + Postgres para escala</li>
-                                <li class="flex items-center"><i class="fab fa-docker text-cyber-primary w-6"></i> Infraestrutura conteinerizada</li>
+                                <li class="flex items-center"><i class="fas fa-bolt text-cyber-primary w-6"></i> Backend
+                                    em <span class="text-white ml-1">Go</span> para disparos rápidos</li>
+                                <li class="flex items-center"><i class="fas fa-database text-cyber-primary w-6"></i>
+                                    <span class="text-white mx-1">Redis</span> + Postgres para escala
+                                </li>
+                                <li class="flex items-center"><i class="fab fa-docker text-cyber-primary w-6"></i>
+                                    Infraestrutura conteinerizada</li>
                             </ul>
                         </div>
 
-                        <a href="https://grup-ify.com" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-cyber-primary/10 text-cyber-primary border border-cyber-primary rounded hover:bg-cyber-primary hover:text-black transition-all font-bold">
+                        <a href="https://grup-ify.com" target="_blank"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-cyber-primary/10 text-cyber-primary border border-cyber-primary rounded hover:bg-cyber-primary hover:text-black transition-all font-bold">
                             VISITAR PROJETO <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
@@ -314,70 +611,94 @@
                     <!-- Info (Ordem invertida no desktop) -->
                     <div class="order-2 lg:order-1" data-aos="fade-right">
                         <h3 class="text-3xl font-display font-bold text-white mb-2">Promofasts</h3>
-                        <p class="text-cyber-secondary font-mono text-sm tracking-widest mb-6">REAL-TIME DEALS TRACKER</p>
-                        
+                        <p class="text-cyber-secondary font-mono text-sm tracking-widest mb-6">REAL-TIME DEALS TRACKER
+                        </p>
+
                         <p class="text-gray-400 mb-6 text-lg leading-relaxed">
-                            Plataforma de inteligência de preços. Monitora grandes e-commerces em tempo real e notifica usuários instantaneamente sobre promoções e erros de preço.
+                            Plataforma de inteligência de preços. Monitora grandes e-commerces em tempo real e notifica
+                            usuários instantaneamente sobre promoções e erros de preço.
                         </p>
 
                         <div class="glass-card p-5 rounded-lg border-l-4 border-cyber-secondary mb-8">
                             <ul class="space-y-2 font-mono text-sm text-gray-300">
-                                <li class="flex items-center"><i class="fas fa-robot text-cyber-secondary w-6"></i> Scrapers otimizados em <span class="text-white ml-1">Node.js</span></li>
-                                <li class="flex items-center"><i class="fas fa-bell text-cyber-secondary w-6"></i> Websockets para alertas reais</li>
-                                <li class="flex items-center"><i class="fas fa-layer-group text-cyber-secondary w-6"></i> Prisma ORM + PostgreSQL</li>
+                                <li class="flex items-center"><i class="fas fa-robot text-cyber-secondary w-6"></i>
+                                    Scrapers otimizados em <span class="text-white ml-1">Node.js</span></li>
+                                <li class="flex items-center"><i class="fas fa-bell text-cyber-secondary w-6"></i>
+                                    Websockets para alertas reais</li>
+                                <li class="flex items-center"><i
+                                        class="fas fa-layer-group text-cyber-secondary w-6"></i> Prisma ORM + PostgreSQL
+                                </li>
                             </ul>
                         </div>
 
-                        <a href="https://promofasts.com" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-cyber-secondary/10 text-cyber-secondary border border-cyber-secondary rounded hover:bg-cyber-secondary hover:text-black transition-all font-bold">
+                        <a href="https://promofasts.com" target="_blank"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-cyber-secondary/10 text-cyber-secondary border border-cyber-secondary rounded hover:bg-cyber-secondary hover:text-black transition-all font-bold">
                             VISITAR PROJETO <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
 
                     <!-- Janela Mockup -->
-                    <div class="order-1 lg:order-2 browser-mockup shadow-neon-pink/20 transition-transform duration-500 group-hover:scale-[1.02] group-hover:shadow-neon-pink/40 vanilla-tilt" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                    <div class="order-1 lg:order-2 browser-mockup shadow-neon-pink/20 transition-transform duration-500 group-hover:scale-[1.02] group-hover:shadow-neon-pink/40 vanilla-tilt"
+                        data-tilt data-tilt-glare data-tilt-max-glare="0.3">
                         <div class="browser-header">
-                            <div class="dot bg-red-500"></div><div class="dot bg-yellow-500"></div><div class="dot bg-green-500"></div>
+                            <div class="dot bg-red-500"></div>
+                            <div class="dot bg-yellow-500"></div>
+                            <div class="dot bg-green-500"></div>
                             <span class="ml-3 text-xs text-gray-500 font-mono">promofasts.com</span>
                         </div>
                         <div class="relative h-[350px] bg-gray-900 overflow-hidden">
-                             <!-- IMPORTANTE: Coloque o print aqui -->
-                            <img src="print-promofasts.png" onerror="this.src='https://placehold.co/800x600/111/ff0055?text=Print+Promofasts'" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                            <!-- IMPORTANTE: Coloque o print aqui -->
+                            <img src="print-promofasts.png"
+                                onerror="this.src='https://placehold.co/800x600/111/ff0055?text=Print+Promofasts'"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent">
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- New Games Release -->
                 <div class="grid lg:grid-cols-2 gap-12 items-center group">
-                    <div class="browser-mockup shadow-purple-500/20 transition-transform duration-500 group-hover:scale-[1.02] group-hover:shadow-purple-500/40 vanilla-tilt" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                    <div class="browser-mockup shadow-purple-500/20 transition-transform duration-500 group-hover:scale-[1.02] group-hover:shadow-purple-500/40 vanilla-tilt"
+                        data-tilt data-tilt-glare data-tilt-max-glare="0.3">
                         <div class="browser-header">
-                            <div class="dot bg-red-500"></div><div class="dot bg-yellow-500"></div><div class="dot bg-green-500"></div>
+                            <div class="dot bg-red-500"></div>
+                            <div class="dot bg-yellow-500"></div>
+                            <div class="dot bg-green-500"></div>
                             <span class="ml-3 text-xs text-gray-500 font-mono">newgamesrelease.com</span>
                         </div>
                         <div class="relative h-[350px] bg-gray-900 overflow-hidden">
-                             <!-- IMPORTANTE: Coloque o print aqui -->
-                            <img src="print-newgames.png" onerror="this.src='https://placehold.co/800x600/111/bc13fe?text=Print+New+Games'" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                            <!-- IMPORTANTE: Coloque o print aqui -->
+                            <img src="print-newgames.png"
+                                onerror="this.src='https://placehold.co/800x600/111/bc13fe?text=Print+New+Games'"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent">
+                            </div>
                         </div>
                     </div>
 
                     <div data-aos="fade-left">
                         <h3 class="text-3xl font-display font-bold text-white mb-2">New Games Release</h3>
                         <p class="text-cyber-purple font-mono text-sm tracking-widest mb-6">GAMING PLATFORM & API</p>
-                        
+
                         <p class="text-gray-400 mb-6 text-lg leading-relaxed">
-                            Ecossistema completo para gamers. Integração com API IGDB, sistema de pagamentos global e arquitetura segura.
+                            Ecossistema completo para gamers. Integração com API IGDB, sistema de pagamentos global e
+                            arquitetura segura.
                         </p>
 
                         <div class="glass-card p-5 rounded-lg border-l-4 border-cyber-purple mb-8">
                             <ul class="space-y-2 font-mono text-sm text-gray-300">
-                                <li class="flex items-center"><i class="fas fa-server text-cyber-purple w-6"></i> Backend puro em <span class="text-white ml-1">Go (Golang)</span></li>
-                                <li class="flex items-center"><i class="fas fa-shield-alt text-cyber-purple w-6"></i> Cloudflare + Nginx Proxy</li>
-                                <li class="flex items-center"><i class="fab fa-stripe text-cyber-purple w-6"></i> Stripe & Mercado Pago</li>
+                                <li class="flex items-center"><i class="fas fa-server text-cyber-purple w-6"></i>
+                                    Backend puro em <span class="text-white ml-1">Go (Golang)</span></li>
+                                <li class="flex items-center"><i class="fas fa-shield-alt text-cyber-purple w-6"></i>
+                                    Cloudflare + Nginx Proxy</li>
+                                <li class="flex items-center"><i class="fab fa-stripe text-cyber-purple w-6"></i> Stripe
+                                    & Mercado Pago</li>
                             </ul>
                         </div>
 
-                        <a href="https://newgamesrelease.com" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-cyber-purple/10 text-cyber-purple border border-cyber-purple rounded hover:bg-cyber-purple hover:text-black transition-all font-bold">
+                        <a href="https://newgamesrelease.com" target="_blank"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-cyber-purple/10 text-cyber-purple border border-cyber-purple rounded hover:bg-cyber-purple hover:text-black transition-all font-bold">
                             VISITAR PROJETO <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
@@ -398,26 +719,19 @@
                 <!-- Linha Neon Vertical -->
                 <div class="timeline-line"></div>
 
-                <!-- XP 1 -->
-                <div class="relative mb-16 sm:flex justify-between items-center w-full group" data-aos="fade-up">
-                    <div class="order-1 sm:w-5/12 sm:text-right">
-                        <h3 class="text-2xl font-bold text-white group-hover:text-cyber-primary transition">New Games Release</h3>
-                        <p class="font-mono text-sm text-gray-400">2025 - Presente</p>
-                    </div>
-                    <div class="z-20 flex items-center order-1 bg-black border-2 border-cyber-primary shadow-[0_0_15px_#00f3ff] w-5 h-5 rounded-full absolute left-[-9px] sm:static sm:mx-auto"></div>
-                    <div class="order-1 sm:w-5/12 glass-card p-6 rounded-xl mt-4 sm:mt-0 group-hover:border-cyber-primary/50 transition">
-                        <p class="text-gray-300 text-sm">Desenvolvimento Full-Stack. Liderança técnica na arquitetura Go, Docker e CI/CD.</p>
-                    </div>
-                </div>
-
                 <!-- XP 2 -->
                 <div class="relative mb-16 sm:flex justify-between items-center w-full group" data-aos="fade-up">
-                    <div class="order-1 sm:w-5/12 glass-card p-6 rounded-xl mt-4 sm:mt-0 sm:text-right group-hover:border-blue-500/50 transition">
-                        <p class="text-gray-300 text-sm">Desenvolvedor Júnior. Integrações complexas de ERP usando Delphi, C# e SQL.</p>
+                    <div
+                        class="order-1 sm:w-5/12 glass-card p-6 rounded-xl mt-4 sm:mt-0 sm:text-right group-hover:border-blue-500/50 transition">
+                        <p class="text-gray-300 text-sm">Desenvolvedor Júnior. Integrações complexas de ERP usando
+                            Delphi, C# e SQL.</p>
                     </div>
-                    <div class="z-20 flex items-center order-1 bg-black border-2 border-blue-500 shadow-[0_0_15px_#3b82f6] w-5 h-5 rounded-full absolute left-[-9px] sm:static sm:mx-auto"></div>
+                    <div
+                        class="z-20 flex items-center order-1 bg-black border-2 border-blue-500 shadow-[0_0_15px_#3b82f6] w-5 h-5 rounded-full absolute left-[-9px] sm:static sm:mx-auto">
+                    </div>
                     <div class="order-1 sm:w-5/12">
-                        <h3 class="text-2xl font-bold text-white group-hover:text-blue-500 transition">Viasoft Korp ERP</h3>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-blue-500 transition">Viasoft Korp ERP
+                        </h3>
                         <p class="font-mono text-sm text-gray-400">2024 - 2025</p>
                     </div>
                 </div>
@@ -428,18 +742,26 @@
                         <h3 class="text-2xl font-bold text-white group-hover:text-green-500 transition">PH Sys</h3>
                         <p class="font-mono text-sm text-gray-400">2024</p>
                     </div>
-                    <div class="z-20 flex items-center order-1 bg-black border-2 border-green-500 shadow-[0_0_15px_#22c55e] w-5 h-5 rounded-full absolute left-[-9px] sm:static sm:mx-auto"></div>
-                    <div class="order-1 sm:w-5/12 glass-card p-6 rounded-xl mt-4 sm:mt-0 group-hover:border-green-500/50 transition">
-                        <p class="text-gray-300 text-sm">Desenvolvedor Júnior. Implementação de funcionalidades e automação de sistemas internos.</p>
+                    <div
+                        class="z-20 flex items-center order-1 bg-black border-2 border-green-500 shadow-[0_0_15px_#22c55e] w-5 h-5 rounded-full absolute left-[-9px] sm:static sm:mx-auto">
+                    </div>
+                    <div
+                        class="order-1 sm:w-5/12 glass-card p-6 rounded-xl mt-4 sm:mt-0 group-hover:border-green-500/50 transition">
+                        <p class="text-gray-300 text-sm">Desenvolvedor Júnior. Implementação de funcionalidades e
+                            automação de sistemas internos.</p>
                     </div>
                 </div>
 
                 <!-- XP 4 -->
                 <div class="relative mb-16 sm:flex justify-between items-center w-full group" data-aos="fade-up">
-                    <div class="order-1 sm:w-5/12 glass-card p-6 rounded-xl mt-4 sm:mt-0 sm:text-right group-hover:border-purple-500/50 transition">
-                        <p class="text-gray-300 text-sm">Suporte Técnico. Resolução de bugs, scripts SQL e atendimento especializado.</p>
+                    <div
+                        class="order-1 sm:w-5/12 glass-card p-6 rounded-xl mt-4 sm:mt-0 sm:text-right group-hover:border-purple-500/50 transition">
+                        <p class="text-gray-300 text-sm">Suporte Técnico. Resolução de bugs, scripts SQL e atendimento
+                            especializado.</p>
                     </div>
-                    <div class="z-20 flex items-center order-1 bg-black border-2 border-purple-500 shadow-[0_0_15px_#a855f7] w-5 h-5 rounded-full absolute left-[-9px] sm:static sm:mx-auto"></div>
+                    <div
+                        class="z-20 flex items-center order-1 bg-black border-2 border-purple-500 shadow-[0_0_15px_#a855f7] w-5 h-5 rounded-full absolute left-[-9px] sm:static sm:mx-auto">
+                    </div>
                     <div class="order-1 sm:w-5/12">
                         <h3 class="text-2xl font-bold text-white group-hover:text-purple-500 transition">PH Sys</h3>
                         <p class="font-mono text-sm text-gray-400">2021 - 2024</p>
@@ -457,12 +779,16 @@
 
         <div class="grid md:grid-cols-4 gap-6">
             <!-- Coluna 1 -->
-            <div class="glass-card p-6 rounded-xl border-t-2 border-cyber-primary hover:-translate-y-2 transition-transform">
+            <div
+                class="glass-card p-6 rounded-xl border-t-2 border-cyber-primary hover:-translate-y-2 transition-transform">
                 <h4 class="font-display font-bold text-cyber-primary mb-4 text-lg">BACKEND</h4>
                 <ul class="space-y-3 font-mono text-sm text-gray-400">
-                    <li class="flex items-center hover:text-white transition"><i class="fab fa-golang w-6 text-cyan-400"></i> Go (Expert)</li>
-                    <li class="flex items-center hover:text-white transition"><i class="fab fa-node w-6 text-green-400"></i> Node.js</li>
-                    <li class="flex items-center hover:text-white transition"><i class="fas fa-code w-6 text-blue-500"></i> C# / .NET</li>
+                    <li class="flex items-center hover:text-white transition"><i
+                            class="fab fa-golang w-6 text-cyan-400"></i> Go (Expert)</li>
+                    <li class="flex items-center hover:text-white transition"><i
+                            class="fab fa-node w-6 text-green-400"></i> Node.js</li>
+                    <li class="flex items-center hover:text-white transition"><i
+                            class="fas fa-code w-6 text-blue-500"></i> C# / .NET</li>
                 </ul>
             </div>
 
@@ -470,28 +796,38 @@
             <div class="glass-card p-6 rounded-xl border-t-2 border-blue-500 hover:-translate-y-2 transition-transform">
                 <h4 class="font-display font-bold text-blue-500 mb-4 text-lg">FRONTEND</h4>
                 <ul class="space-y-3 font-mono text-sm text-gray-400">
-                    <li class="flex items-center hover:text-white transition"><i class="fab fa-react w-6 text-blue-400"></i> React.js</li>
-                    <li class="flex items-center hover:text-white transition"><i class="fab fa-js w-6 text-yellow-400"></i> TypeScript</li>
-                    <li class="flex items-center hover:text-white transition"><i class="fas fa-wind w-6 text-teal-300"></i> Tailwind</li>
+                    <li class="flex items-center hover:text-white transition"><i
+                            class="fab fa-react w-6 text-blue-400"></i> React.js</li>
+                    <li class="flex items-center hover:text-white transition"><i
+                            class="fab fa-js w-6 text-yellow-400"></i> TypeScript</li>
+                    <li class="flex items-center hover:text-white transition"><i
+                            class="fas fa-wind w-6 text-teal-300"></i> Tailwind</li>
                 </ul>
             </div>
 
             <!-- Coluna 3 -->
-            <div class="glass-card p-6 rounded-xl border-t-2 border-purple-500 hover:-translate-y-2 transition-transform">
+            <div
+                class="glass-card p-6 rounded-xl border-t-2 border-purple-500 hover:-translate-y-2 transition-transform">
                 <h4 class="font-display font-bold text-purple-500 mb-4 text-lg">DEVOPS</h4>
                 <ul class="space-y-3 font-mono text-sm text-gray-400">
-                    <li class="flex items-center hover:text-white transition"><i class="fab fa-docker w-6 text-blue-600"></i> Docker</li>
-                    <li class="flex items-center hover:text-white transition"><i class="fas fa-server w-6 text-green-500"></i> Nginx / VPS</li>
-                    <li class="flex items-center hover:text-white transition"><i class="fab fa-github w-6 text-white"></i> CI/CD</li>
+                    <li class="flex items-center hover:text-white transition"><i
+                            class="fab fa-docker w-6 text-blue-600"></i> Docker</li>
+                    <li class="flex items-center hover:text-white transition"><i
+                            class="fas fa-server w-6 text-green-500"></i> Nginx / VPS</li>
+                    <li class="flex items-center hover:text-white transition"><i
+                            class="fab fa-github w-6 text-white"></i> CI/CD</li>
                 </ul>
             </div>
 
             <!-- Coluna 4 -->
-            <div class="glass-card p-6 rounded-xl border-t-2 border-gray-500 hover:-translate-y-2 transition-transform opacity-80 hover:opacity-100">
+            <div
+                class="glass-card p-6 rounded-xl border-t-2 border-gray-500 hover:-translate-y-2 transition-transform opacity-80 hover:opacity-100">
                 <h4 class="font-display font-bold text-gray-400 mb-4 text-lg">LEGACY & TOOLS</h4>
                 <ul class="space-y-3 font-mono text-sm text-gray-500">
-                    <li class="flex items-center hover:text-white transition"><i class="fas fa-desktop w-6"></i> Delphi</li>
-                    <li class="flex items-center hover:text-white transition"><i class="fas fa-database w-6"></i> SQL Server</li>
+                    <li class="flex items-center hover:text-white transition"><i class="fas fa-desktop w-6"></i> Delphi
+                    </li>
+                    <li class="flex items-center hover:text-white transition"><i class="fas fa-database w-6"></i> SQL
+                        Server</li>
                     <li class="flex items-center hover:text-white transition"><i class="fas fa-moon w-6"></i> Lua</li>
                 </ul>
             </div>
@@ -507,16 +843,20 @@
             </p>
 
             <div class="flex justify-center gap-8" data-aos="fade-up" data-aos-delay="200">
-                <a href="mailto:tiagopdeliz@gmail.com" class="w-16 h-16 rounded-lg glass-card flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-red-600 hover:shadow-neon-pink transition-all hover:-translate-y-2">
+                <a href="mailto:tiagopdeliz@gmail.com"
+                    class="w-16 h-16 rounded-lg glass-card flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-red-600 hover:shadow-neon-pink transition-all hover:-translate-y-2">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://github.com/Tiago-De-Liz" target="_blank" class="w-16 h-16 rounded-lg glass-card flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-gray-700 hover:shadow-[0_0_15px_white] transition-all hover:-translate-y-2">
+                <a href="https://github.com/Tiago-De-Liz" target="_blank"
+                    class="w-16 h-16 rounded-lg glass-card flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-gray-700 hover:shadow-[0_0_15px_white] transition-all hover:-translate-y-2">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://wa.me/47988537408" target="_blank" class="w-16 h-16 rounded-lg glass-card flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-green-600 hover:shadow-[0_0_15px_lime] transition-all hover:-translate-y-2">
+                <a href="https://wa.me/47988537408" target="_blank"
+                    class="w-16 h-16 rounded-lg glass-card flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-green-600 hover:shadow-[0_0_15px_lime] transition-all hover:-translate-y-2">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://discord.gg/mPJnmUJJRD" target="_blank" class="w-16 h-16 rounded-lg glass-card flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-indigo-600 hover:shadow-[0_0_15px_indigo] transition-all hover:-translate-y-2">
+                <a href="https://discord.gg/mPJnmUJJRD" target="_blank"
+                    class="w-16 h-16 rounded-lg glass-card flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-indigo-600 hover:shadow-[0_0_15px_indigo] transition-all hover:-translate-y-2">
                     <i class="fab fa-discord"></i>
                 </a>
             </div>
@@ -526,6 +866,171 @@
     <footer class="bg-black py-8 border-t border-white/10 text-center font-mono text-xs text-gray-600">
         <p>&copy; 2025 TIAGO DE LIZ. ALL RIGHTS RESERVED.</p>
     </footer>
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://tiago-liz.vercel.app/#person",
+          "name": "Tiago De Liz",
+          "givenName": "Tiago",
+          "familyName": "De Liz",
+          "url": "https://tiago-liz.vercel.app",
+          "image": "https://tiago-liz.vercel.app/profile.jpeg",
+          "jobTitle": "Desenvolvedor Backend & Full Stack",
+          "description": "Desenvolvedor Backend especialista em Go (Golang), Full Stack e arquitetura de microsserviços. Criador de SaaS próprio.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Blumenau",
+            "addressRegion": "SC",
+            "addressCountry": "BR"
+          },
+          "email": "tiagopdeliz@gmail.com",
+          "telephone": "+55-47-988537408",
+          "sameAs": [
+            "https://github.com/Tiago-De-Liz",
+            "https://linkedin.com/in/tiago-de-liz",
+            "https://wa.me/47988537408"
+          ],
+          "knowsAbout": [
+            "Go (Golang)",
+            "Backend Development",
+            "Full Stack Development",
+            "Microservices Architecture",
+            "Docker",
+            "React.js",
+            "Node.js",
+            "PostgreSQL",
+            "Redis",
+            "DevOps",
+            "CI/CD",
+            "Nginx",
+            "TypeScript",
+            "SaaS Development",
+            "WhatsApp API Integration",
+            "CRM Development"
+          ],
+          "hasCredential": [
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "degree",
+              "name": "Desenvolvedor Full Stack"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://tiago-liz.vercel.app/#website",
+          "url": "https://tiago-liz.vercel.app",
+          "name": "Tiago De Liz - Portfolio",
+          "description": "Portfolio profissional de Tiago De Liz, desenvolvedor Backend Go e Full Stack",
+          "publisher": {
+            "@id": "https://tiago-liz.vercel.app/#person"
+          },
+          "inLanguage": "pt-BR"
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://tiago-liz.vercel.app/#projects",
+          "name": "Projetos Desenvolvidos",
+          "itemListElement": [
+            {
+              "@type": "CreativeWork",
+              "position": 1,
+              "name": "Grup-ify",
+              "description": "CRM robusto integrado ao WhatsApp para gerenciamento de leads em alta escala",
+              "url": "https://grup-ify.com",
+              "author": {
+                "@id": "https://tiago-liz.vercel.app/#person"
+              },
+              "keywords": "CRM, WhatsApp, Go, Redis, PostgreSQL, Docker"
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 2,
+              "name": "Promofasts",
+              "description": "Plataforma de inteligência de preços com monitoramento em tempo real",
+              "url": "https://promofasts.com",
+              "author": {
+                "@id": "https://tiago-liz.vercel.app/#person"
+              },
+              "keywords": "Web Scraping, Node.js, Websockets, Prisma, PostgreSQL"
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 3,
+              "name": "New Games Release",
+              "description": "Ecossistema completo para gamers com integração de pagamentos",
+              "url": "https://newgamesrelease.com",
+              "author": {
+                "@id": "https://tiago-liz.vercel.app/#person"
+              },
+              "keywords": "Go, Gaming Platform, Stripe, Mercado Pago, IGDB API"
+            }
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://tiago-liz.vercel.app/#service",
+          "name": "Tiago De Liz - Desenvolvimento de Software",
+          "description": "Serviços de desenvolvimento Backend, Full Stack e criação de SaaS",
+          "provider": {
+            "@id": "https://tiago-liz.vercel.app/#person"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Brasil"
+          },
+          "serviceType": [
+            "Backend Development",
+            "Full Stack Development",
+            "SaaS Development",
+            "Microservices Architecture",
+            "DevOps Consulting"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://tiago-liz.vercel.app/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://tiago-liz.vercel.app"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sobre",
+              "item": "https://tiago-liz.vercel.app#about"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Projetos",
+              "item": "https://tiago-liz.vercel.app#projects"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Stack",
+              "item": "https://tiago-liz.vercel.app#stack"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Contato",
+              "item": "https://tiago-liz.vercel.app#contact"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- Scripts Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -550,7 +1055,7 @@
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-            
+
             renderer.setSize(window.innerWidth, window.innerHeight);
             container.appendChild(renderer.domElement);
 
@@ -558,20 +1063,20 @@
             const geometry = new THREE.BufferGeometry();
             const count = 150;
             const positions = new Float32Array(count * 3);
-            
-            for(let i=0; i<count*3; i++) {
+
+            for (let i = 0; i < count * 3; i++) {
                 positions[i] = (Math.random() - 0.5) * 25;
             }
-            
+
             geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-            
+
             const material = new THREE.PointsMaterial({
                 size: 0.05,
                 color: 0x00f3ff,
                 transparent: true,
                 opacity: 0.8
             });
-            
+
             const particles = new THREE.Points(geometry, material);
             scene.add(particles);
 
@@ -586,21 +1091,21 @@
             // Animation
             const animate = () => {
                 requestAnimationFrame(animate);
-                
+
                 particles.rotation.y += 0.002;
                 particles.rotation.x += 0.001;
 
                 // Update lines dynamically (simplified for performance)
                 const positions = particles.geometry.attributes.position.array;
                 const linePositions = [];
-                
+
                 // Rotate calculation not strictly necessary for simple visual, 
                 // just rotating the mesh group is cleaner.
                 lines.rotation.y += 0.002;
                 lines.rotation.x += 0.001;
-                
+
                 // Static geometric wireframe for extra tech feel
-                if(!scene.getObjectByName('wireframe')) {
+                if (!scene.getObjectByName('wireframe')) {
                     const geo = new THREE.IcosahedronGeometry(8, 1);
                     const mat = new THREE.LineBasicMaterial({ color: 0x222222, transparent: true, opacity: 0.1 });
                     const wire = new THREE.LineSegments(new THREE.WireframeGeometry(geo), mat);
@@ -626,4 +1131,5 @@
         initThreeJS();
     </script>
 </body>
+
 </html>
