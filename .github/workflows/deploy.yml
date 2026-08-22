@@ -1,0 +1,97 @@
+name: Deploy
+
+# Deploy na VPS central.
+#
+# Secrets necessários: SSH_PRIVATE_KEY, VPS_USER, VPS_IP.
+# Variável de repositório: DEPLOY_ENABLED = 'true' (sem ela, nada vai para
+# produção). As variáveis da aplicação vivem em /opt/portfolio/.env, na VPS —
+# nenhum segredo de aplicação fica no GitHub.
+#
+# Este repositório é público: o GitHub não expõe secrets a workflows disparados
+# por PR de fork, e este só roda em push para main, então a chave não vaza por
+# PR de terceiro. Ainda assim, é a chave com menor privilégio possível — acesso
+# só ao usuário deploy da VPS.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PROJETO_DIR: /opt/portfolio
+  BRANCH: main
+  URL: https://tiago-liz.lixyns.com
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: vars.DEPLOY_ENABLED == 'true'
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      # Só o que entra na imagem justifica um rebuild: mudar README ou os
+      # próprios workflows não deve reconstruir a aplicação.
+      - id: relevante
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "build=sim" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          ANTES="${{ github.event.before }}"
+          if [ -z "$ANTES" ] || [ "$ANTES" = "0000000000000000000000000000000000000000" ] \
+             || ! git cat-file -e "$ANTES^{commit}" 2>/dev/null; then
+            ANTES="${{ github.sha }}~1"
+          fi
+          MUDOU=$(git diff --name-only "$ANTES" "${{ github.sha }}")
+          echo "Arquivos alterados:"; echo "$MUDOU" | sed 's/^/  /'
+          if echo "$MUDOU" | grep -qvE '^(\.github/|.*\.md$)'; then
+            echo "build=sim" >> "$GITHUB_OUTPUT"
+          else
+            echo "build=nao" >> "$GITHUB_OUTPUT"
+            echo "Nada que afete a imagem — deploy dispensado."
+          fi
+
+      - name: Set up SSH
+        if: steps.relevante.outputs.build == 'sim'
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "${{ secrets.VPS_IP }}" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Build e deploy
+        if: steps.relevante.outputs.build == 'sim'
+        run: |
+          ssh -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -o StrictHostKeyChecking=no "${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }}" \
+              "DIR='${{ env.PROJETO_DIR }}' BRANCH='${{ env.BRANCH }}' bash -s" <<'EOF'
+            set -e
+            cd "$DIR"
+            git pull origin "$BRANCH"
+            docker compose build web
+            docker compose up -d --remove-orphans
+            docker image prune -f
+          EOF
+
+      - name: Confirmar que subiu
+        if: steps.relevante.outputs.build == 'sim'
+        run: |
+          ssh -o ServerAliveInterval=30 -o ServerAliveCountMax=10 -o StrictHostKeyChecking=no "${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }}" \
+              "DIR='${{ env.PROJETO_DIR }}' bash -s" <<'EOF'
+            set -e
+            cd "$DIR"
+            sleep 15
+            ESTADO=$(docker compose ps --format '{{.State}}' web)
+            echo "web: $ESTADO"
+            [ "$ESTADO" = "running" ] || { docker compose logs --tail=40 web; exit 1; }
+          EOF
+
+      - name: Site no ar
+        if: steps.relevante.outputs.build == 'sim'
+        run: |
+          CODIGO=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 --retry 3 --retry-delay 5 "${{ env.URL }}")
+          echo "${{ env.URL }} -> HTTP $CODIGO"
+          [ "$CODIGO" = "200" ] || exit 1
