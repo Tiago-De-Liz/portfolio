@@ -4,4 +4,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://tiago-liz.vercel.app/sitemap.xml
+Sitemap: https://tiago-liz.lixyns.com/sitemap.xml

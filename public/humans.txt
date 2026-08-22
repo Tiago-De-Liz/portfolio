@@ -6,7 +6,7 @@
     Contato: tiagopdeliz [at] gmail.com
     GitHub: github.com/Tiago-De-Liz
     LinkedIn: linkedin.com/in/tiago-de-liz
-    Portfólio: tiago-liz.vercel.app
+    Portfólio: tiago-liz.lixyns.com
 
 /* SITE */
     Última atualização: 2026/01/08
