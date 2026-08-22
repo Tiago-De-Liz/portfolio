@@ -1,0 +1,39 @@
+name: portfolio
+
+# Portfólio do Tiago na VPS central.
+#
+# Antes de subir:
+#   1. cp .env.prod.example .env  e preencher
+#   2. registro A de tiago-liz.lixyns.com apontando para a VPS
+#   3. docker compose up -d --build
+
+networks:
+  traefik:
+    external: true
+  observability:
+    external: true
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  web:
+    build:
+      context: .
+    container_name: ${APP_SLUG}-web
+    restart: unless-stopped
+    networks:
+      - traefik
+      - observability
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${APP_SLUG}.rule=Host(`${APP_DOMAIN}`)"
+      - "traefik.http.routers.${APP_SLUG}.entrypoints=websecure"
+      - "traefik.http.routers.${APP_SLUG}.tls.certresolver=cloudflare"
+      - "traefik.http.routers.${APP_SLUG}.middlewares=secure-headers@file,compress@file,rate-limit@file"
+      - "traefik.http.services.${APP_SLUG}.loadbalancer.server.port=80"
+      - "logging=promtail"
+    logging: *logging
